@@ -20,7 +20,6 @@ $enable-shadows: true;
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
 
-
 $primary: #E03A3A !default;
 $secondary: #C42F40;
 $info: #424242;
@@ -28,7 +27,6 @@ $warning: #FA7347;
 $danger: #E03A3A;
 $light: #E7E7E7;
 $dark: #2D2D2D;
-
 
 $enable-negative-margins: true;
 
@@ -60,6 +58,16 @@ $border-radius-sm: 5px;
 $border-radius-lg: 20px;
 
 $prefix: "stkh-";
+
+$font-family-sans-serif: 'EurofontC', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1440px
+);
 
 // Required
 @import "../../node_modules/bootstrap/scss/variables";
@@ -134,3 +142,36 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@font-face {
+  font-family: 'EurofontC';
+  src: url('./assets/fonts/EurofontC/EurofontC.eot');
+  src: local('EurofontC'),
+  url('./assets/fonts/EurofontC/EurofontC.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/EurofontC/EurofontC.woff2') format('woff2'),
+  url('./assets/fonts/EurofontC/EurofontC.woff') format('woff'),
+  url('./assets/fonts/EurofontC/EurofontC.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EurofontMediumC';
+  src: url('./assets/fonts/EurofontMediumC-Italic.eot');
+  src: local('EurofontMediumC Italic'), local('EurofontMediumC-Italic'),
+  url('./assets/fonts/EurofontMediumC-Italic.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/EurofontMediumC-Italic.woff2') format('woff2'),
+  url('./assets/fonts/EurofontMediumC-Italic.woff') format('woff'),
+  url('./assets/fonts/EurofontMediumC-Italic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: 'EurofontC', 'PT Sans', 'Roboto', 'Arial', sans-serif !important;
+}
+
+.euro-medium {
+  font-family: 'EurofontMediumC', 'PT Sans', 'Roboto', 'Arial', sans-serif !important;
+}

@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'EurofontC';
+    src: url('EurofontC-Bold.eot');
+    src: local('EurofontC Bold'), local('EurofontC-Bold'),
+        url('EurofontC-Bold.eot?#iefix') format('embedded-opentype'),
+        url('EurofontC-Bold.woff2') format('woff2'),
+        url('EurofontC-Bold.woff') format('woff'),
+        url('EurofontC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontExtendedC';
+    src: url('EurofontExtendedC-BoldItalic.eot');
+    src: local('EurofontExtendedC Bold Italic'), local('EurofontExtendedC-BoldItalic'),
+        url('EurofontExtendedC-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('EurofontExtendedC-BoldItalic.woff2') format('woff2'),
+        url('EurofontExtendedC-BoldItalic.woff') format('woff'),
+        url('EurofontExtendedC-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontExtendedC';
+    src: url('EurofontExtendedC.eot');
+    src: local('EurofontExtendedC'),
+        url('EurofontExtendedC.eot?#iefix') format('embedded-opentype'),
+        url('EurofontExtendedC.woff2') format('woff2'),
+        url('EurofontExtendedC.woff') format('woff'),
+        url('EurofontExtendedC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontExtendedC';
+    src: url('EurofontExtendedC-Bold.eot');
+    src: local('EurofontExtendedC Bold'), local('EurofontExtendedC-Bold'),
+        url('EurofontExtendedC-Bold.eot?#iefix') format('embedded-opentype'),
+        url('EurofontExtendedC-Bold.woff2') format('woff2'),
+        url('EurofontExtendedC-Bold.woff') format('woff'),
+        url('EurofontExtendedC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontC';
+    src: url('EurofontC-BoldItalic.eot');
+    src: local('EurofontC Bold Italic'), local('EurofontC-BoldItalic'),
+        url('EurofontC-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('EurofontC-BoldItalic.woff2') format('woff2'),
+        url('EurofontC-BoldItalic.woff') format('woff'),
+        url('EurofontC-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontLightC';
+    src: url('EurofontLightC.eot');
+    src: local('EurofontLightC'),
+        url('EurofontLightC.eot?#iefix') format('embedded-opentype'),
+        url('EurofontLightC.woff2') format('woff2'),
+        url('EurofontLightC.woff') format('woff'),
+        url('EurofontLightC.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontLightC';
+    src: url('EurofontLightC-Italic.eot');
+    src: local('EurofontLightC Italic'), local('EurofontLightC-Italic'),
+        url('EurofontLightC-Italic.eot?#iefix') format('embedded-opentype'),
+        url('EurofontLightC-Italic.woff2') format('woff2'),
+        url('EurofontLightC-Italic.woff') format('woff'),
+        url('EurofontLightC-Italic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontC';
+    src: url('EurofontC.eot');
+    src: local('EurofontC'),
+        url('EurofontC.eot?#iefix') format('embedded-opentype'),
+        url('EurofontC.woff2') format('woff2'),
+        url('EurofontC.woff') format('woff'),
+        url('EurofontC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontMediumC';
+    src: url('EurofontMediumC-Italic.eot');
+    src: local('EurofontMediumC Italic'), local('EurofontMediumC-Italic'),
+        url('EurofontMediumC-Italic.eot?#iefix') format('embedded-opentype'),
+        url('EurofontMediumC-Italic.woff2') format('woff2'),
+        url('EurofontMediumC-Italic.woff') format('woff'),
+        url('EurofontMediumC-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontExtendedC';
+    src: url('EurofontExtendedC-Italic.eot');
+    src: local('EurofontExtendedC Italic'), local('EurofontExtendedC-Italic'),
+        url('EurofontExtendedC-Italic.eot?#iefix') format('embedded-opentype'),
+        url('EurofontExtendedC-Italic.woff2') format('woff2'),
+        url('EurofontExtendedC-Italic.woff') format('woff'),
+        url('EurofontExtendedC-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontC';
+    src: url('EurofontC-Italic.eot');
+    src: local('EurofontC Italic'), local('EurofontC-Italic'),
+        url('EurofontC-Italic.eot?#iefix') format('embedded-opentype'),
+        url('EurofontC-Italic.woff2') format('woff2'),
+        url('EurofontC-Italic.woff') format('woff'),
+        url('EurofontC-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EurofontMediumC';
+    src: url('EurofontMediumC.eot');
+    src: local('EurofontMediumC'),
+        url('EurofontMediumC.eot?#iefix') format('embedded-opentype'),
+        url('EurofontMediumC.woff2') format('woff2'),
+        url('EurofontMediumC.woff') format('woff'),
+        url('EurofontMediumC.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

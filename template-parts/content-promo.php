@@ -10,9 +10,15 @@
 ?>
 <div class="w-100 stkh-promo bg-primary z-1 py-5">
     <div class="container">
-        <div class="row">
+        <div class="row py-5">
             <div class="col-7">
-                <h1 class="text-white">Система информационной безопасности Стахановец</h1>
+                <h1 class="text-white fw-bold">Система информационной безопасности Стахановец</h1>
+                <p class="h3 text-white euro-medium">Сертификат Оперативно-аналитического центра (ОАЦ) при Президенте
+                    Республики
+                    Беларусь</p>
+                <div>
+                    <button>1</button>
+                </div>
             </div>
         </div>
     </div>
