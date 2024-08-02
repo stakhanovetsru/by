@@ -1,0 +1,43 @@
+// ЦВЕТ
+$enable-gradients: false;
+
+$primary: #E03A3A !default;
+$secondary: #C42F40;
+$info: #424242;
+$warning: #FA7347;
+$danger: #E03A3A;
+$light: #E7E7E7;
+$dark: #2D2D2D;
+
+
+//$theme-colors: map-remove($theme-colors, "danger", "success", "warning", "info", "light", "dark");
+$enable-negative-margins: true;
+
+// Размеры дополнительные
+$display-font-sizes: (
+        1: 80px,
+        2: 72px,
+        3: 64px,
+        4: 48px,
+        5: 36px,
+        6: 32px
+);
+
+$h1-font-size: 64px;
+$h2-font-size: 48px;
+$h3-font-size: 36px;
+$h4-font-size: 32px;
+$h5-font-size: 28px;
+$h6-font-size: 24px;
+
+
+$lead-font-size: 20px;
+$small-font-size: 16px;
+
+
+// Управление радиусом
+$border-radius: 10px;
+$border-radius-sm: 5px;
+$border-radius-lg: 20px;
+
+$prefix: "stkh-";
