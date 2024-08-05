@@ -20,7 +20,7 @@ get_header();
 
 
     <!-- -->
-    <h2>Сертификат ОАЦ</h2>
+    <h2 id="one">Сертификат ОАЦ</h2>
 
     <main id="primary" class="site-main">
 
