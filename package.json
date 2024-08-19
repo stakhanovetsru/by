@@ -17,8 +17,9 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^28.4.0",
+    "@wordpress/scripts": "^19.2.4",
     "dir-archiver": "^1.1.1",
+    "gulp-purgecss": "^6.0.0",
     "node-sass": "^9.0.0",
     "rtlcss": "^3.5.0"
   },
@@ -54,16 +55,21 @@
   },
   "scripts": {
     "watch": "node-sass assets/scss/ -o ./ --source-map true --output-style compressed --indent-type tab --indent-width 1 -w",
-    "purge": "purgecss --css style.css --content *.php **/*.php --output style.css",
+    "prod": "purgecss --css style.css --content *.php **/*.php --output style.css && imagemin assets/images/* --out-dir=build/images",
     "imgmin": "imagemin assets/images/* --out-dir=build/images",
     "compile:css": "node-sass assets/scss/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'assets/scss/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'assets/js/*.js'",
-    "bundle": "-purge dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "bootstrap": "^5.3.3",
+    "imagemin": "^9.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^11.0.1",
     "npm-watch": "^0.13.0"
   }
 }
