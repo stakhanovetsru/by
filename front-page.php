@@ -45,8 +45,10 @@ get_header();
                     </div>
                 </div>
                 <div class="col-12 col-md-5 col-xl-4 offset-xl-1 mt-3 mt-md-0">
-                    <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/Rectangle.jpg' ) ); ?>"
-                         alt="Сертификат" class="img-fluid">
+                    <a href="https://by.stakhanovets.com/wp-content/uploads/2024/08/Ресурс-2@3x-80.jpg">
+                        <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/Rectangle.jpg' ) ); ?>"
+                             alt="Сертификат" class="img-fluid">
+                    </a>
                 </div>
             </div>
         </div>
@@ -66,15 +68,22 @@ get_header();
                     </p>
                     <div class="row mt-5 mb-5 mb-lg-0">
                         <div class="col-12 col-lg-6">
-                            <a href="#" class="btn btn-lg btn-primary w-100 rounded-1 text-white fw-bold p-13">
+                            <a href="https://by.stakhanovets.com/wp-content/uploads/2024/08/2024.-Стахановец.-РБ.-DLP-СИСТЕМА-ДЛЯ-ЗАЩИТЫ-ИНФОРМАЦИИ.pdf"
+                               class="btn btn-lg btn-primary w-100 rounded-1 text-white fw-bold p-13" target="_blank">
                                 Скачать презентацию
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/system.jpg' ) ); ?>"
-                         alt="Картинка для дизайна" class="img-fluid">
+                <div class="col-12 col-lg-6">
+                    <video class="object-fit-cover" controls
+                           autoplay
+                           playsinline
+                           muted>
+                        <source src="https://by.stakhanovets.com/wp-content/uploads/2024/08/video.mp4" type="video/mp4">
+                        <source src="https://by.stakhanovets.com/wp-content/uploads/2024/08/Безопасность_10.03.2022.webm"
+                                type="video/webm">
+                    </video>
                 </div>
             </div>
         </div>
@@ -155,9 +164,9 @@ get_header();
             <h2 id="" class="euro-medium h3 text-center">Преимущества DLP-системы Стахановец</h2>
         </div>
 
-        <div class="container stkh-numbers">
+        <div class="container stkh-numbers mt-5">
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4">
 				<?php
 				$data = [
 					1 => 'Высокая производительность при минимальных системных требованиях к серверу и end-point клиентам',
@@ -169,18 +178,19 @@ get_header();
 				];
 				$i    = 1;
 				while ( $i <= count( $data ) ): ?>
-                    <div class="col my-xl-5">
-                        <div class="row">
-                            <div class="col-12 col-md-auto">
-                                <div class="stkh-numbers__num rounded d-flex align-items-center justify-content-center text-white bg-warning h2">
-									<?php echo $i; ?>
+                    <div class="col d-flex align-items-stretch">
+                        <div class="shadow rounded">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-12 col-md-auto">
+                                    <div class="stkh-numbers__num rounded d-flex align-items-center justify-content-center text-white bg-warning h2">
+										<?php echo $i; ?>
+                                    </div>
+                                </div>
+                                <div class="col">
+									<?php echo "<p class='euro-medium m-0 pe-4'>{$data[$i]}</p>"; ?>
                                 </div>
                             </div>
-                            <div class="col">
-								<?php echo "<p class='lead euro-medium'>{$data[$i]}</p>"; ?>
-                            </div>
                         </div>
-
                     </div>
 					<?php
 					$i ++;
@@ -227,6 +237,7 @@ get_header();
     </div>
 
 
+<?php if ( is_user_logged_in() ) : ?>
     <!-- Калькулятор -->
     <div class="stkh-sovmstm my-5 pt-5">
         <div class="container">
@@ -250,11 +261,12 @@ get_header();
             </div>
         </div>
     </div>
+<?php endif; ?>
 
     <!-- Разработчик программного -->
     <div class="stkh-dev my-5 pt-0 pt-lg-5">
         <div class="container">
-            <h2 id="" class="euro-medium text-center h2 mt-5">Разработчик программного<br>
+            <h2 id="three" class="euro-medium text-center h2 mt-5">Разработчик программного<br>
                 продукта Стахановец</h2>
 
         </div>
@@ -342,7 +354,7 @@ get_header();
     <!-- Возможности -->
     <div class="stkh-funcs my-5 pt-5">
         <div class="container">
-            <h2 id="" class="euro-medium text-center mb-5 h2">Возможности DLP-системы Стахановец</h2>
+            <h2 id="four" class="euro-medium text-center mb-5 h2">Возможности DLP-системы Стахановец</h2>
 
             <div class="row row-gap-4">
                 <div class="col-12 col-md-6 col-xxl-4 d-flex align-items-stretch">
@@ -535,10 +547,10 @@ get_header();
                     <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-one"
                          tabindex="0">
                         <div class="row my-5 py-4 bg-brand-gradient rounded d-flex align-items-center">
-                            <div class="col col-xl-5 offset-xl-1">
+                            <div class="col-12 col-xl-5 offset-xl-1">
                                 <h3 class="text-white">Маркирование документов</h3>
                             </div>
-                            <div class="col col-xl-5 d-flex align-items-center">
+                            <div class="col-12 col-xl-5 d-flex align-items-center">
                                 <p class="euro-medium text-white m-0">В системе можно проставить метки на
                                     конфиденциальные
                                     документы.
@@ -551,10 +563,10 @@ get_header();
                     </div>
                     <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-two" tabindex="0">
                         <div class="row my-5 py-4 bg-brand-gradient rounded d-flex align-items-center">
-                            <div class="col col-xl-5 offset-xl-1">
+                            <div class="col-12 col-xl-5 offset-xl-1">
                                 <h3 class="text-white">Скрытые водяные знаки</h3>
                             </div>
-                            <div class="col col-xl-5 d-flex align-items-center">
+                            <div class="col-12 col-xl-5 d-flex align-items-center">
                                 <p class="euro-medium text-white m-0">Комплекс незаметно маркирует скриншоты, что
                                     помогает идентифицировать сотрудника и выявить канал утечки информации, если снимок
                                     оказывается в открытых источниках.</p>
@@ -565,10 +577,10 @@ get_header();
                     </div>
                     <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-three" tabindex="0">
                         <div class="row my-5 py-4 bg-brand-gradient rounded d-flex align-items-center">
-                            <div class="col col-xl-5 offset-xl-1">
+                            <div class="col-12 col-xl-5 offset-xl-1">
                                 <h3 class="text-white">Технология цифровых отпечатков</h3>
                             </div>
-                            <div class="col col-xl-5 d-flex align-items-center">
+                            <div class="col-12 col-xl-5 d-flex align-items-center">
                                 <p class="euro-medium text-white m-0">Стахановец создает цифровые копии документов,
                                     которые выходят за периметр компании, и блокирует отправку документов с
                                     конфиденциальной информацией.</p>
@@ -579,10 +591,10 @@ get_header();
                     </div>
                     <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-four" tabindex="0">
                         <div class="row my-5 py-4 bg-brand-gradient rounded d-flex align-items-center">
-                            <div class="col col-xl-5 offset-xl-1">
+                            <div class="col-12 col-xl-5 offset-xl-1">
                                 <h3 class="text-white">Распознавание лиц</h3>
                             </div>
-                            <div class="col col-xl-5 d-flex align-items-center">
+                            <div class="col-12 col-xl-5 d-flex align-items-center">
                                 <p class="euro-medium text-white m-0">Опция позволяет идентифицировать каждого
                                     специалиста за рабочим местом и ретроспективно установить, кто работал за ноутбуком
                                     в конкретное время и какие операции совершал. Также можно автоматически выявлять
@@ -594,10 +606,10 @@ get_header();
                     </div>
                     <div class="tab-pane fade" id="nav-5" role="tabpanel" aria-labelledby="nav-five" tabindex="0">
                         <div class="row my-5 py-4 bg-brand-gradient rounded d-flex align-items-center">
-                            <div class="col col-xl-5 offset-xl-1">
+                            <div class="col-12 col-xl-5 offset-xl-1">
                                 <h3 class="text-white">Преобразование речи в текст</h3>
                             </div>
-                            <div class="col col-xl-5 d-flex align-items-center">
+                            <div class="col-12 col-xl-5 d-flex align-items-center">
                                 <p class="euro-medium text-white m-0">Программа перехватывает разговоры персонала и
                                     расшифровывает их в текст. Если сотрудник во время диалога через мессенджеры
                                     произносит подозрительные слова, система распознает угрозы и мгновенно оповещает СБ,
@@ -609,10 +621,10 @@ get_header();
                     </div>
                     <div class="tab-pane fade" id="nav-6" role="tabpanel" aria-labelledby="nav-six" tabindex="0">
                         <div class="row my-5 py-4 bg-brand-gradient rounded d-flex align-items-center">
-                            <div class="col col-xl-5 offset-xl-1">
+                            <div class="col-12 col-xl-5 offset-xl-1">
                                 <h3 class="text-white">Запрет съемных носителей</h3>
                             </div>
-                            <div class="col col-xl-5 d-flex align-items-center">
+                            <div class="col-12 col-xl-5 d-flex align-items-center">
                                 <p class="euro-medium text-white m-0">ПО может блокировать использование
                                     флеш-накопителей, фотоаппаратов, смартфонов, съемных дисков с целью предотвращения
                                     копирования ценных сведений и утечки баз данных. Также можно создать список
@@ -628,12 +640,13 @@ get_header();
             <!-- Кнопки -->
             <div class="row mt-5">
                 <div class="col-12 col-sm-6 col-lg-3 offset-lg-3">
-                    <a href="" class="stkh_action__link btn btn-primary fw-bold text-white rounded-1 p-13 w-100">
+                    <a href="#five" class="stkh_action__link btn btn-primary fw-bold text-white rounded-1 p-13 w-100">
                         Попробовать бесплатно
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="" class="stkh_action__link btn btn-outline-primary fw-bold rounded-1 p-13 w-100">
+                    <a href="https://stakhanovets.ru/demo/" target="_blank"
+                       class="stkh_action__link btn btn-outline-primary fw-bold rounded-1 p-13 w-100">
                         Онлайн-демо
                     </a>
                 </div>
@@ -650,7 +663,8 @@ get_header();
         </div>
         <div class="container mt-5">
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mb-3" id="pills-tab" role="tablist">
+            <div id="stkh-analytics__divs" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mb-3"
+                 id="pills-tab" role="tablist">
 
 				<?php
 				$dataA = [
@@ -748,11 +762,31 @@ get_header();
         </div>
 
         <div class="container text-center mt-5">
-            <a href="" class="btn btn-primary btn__test-online p-13 text-white rounded-1 fw-bold w-100">Тестировать
+            <a href="https://stakhanovets.ru/demo/" target="_blank"
+               class="btn btn-primary btn__test-online p-13 text-white rounded-1 fw-bold w-100">Тестировать
                 онлайн</a>
         </div>
 
     </div>
+
+    <script>
+
+        const stkhA = document.getElementById('stkh-analytics__divs');
+
+        for (let i = 0; i < stkhA.children.length; i++) {
+
+            console.log(stkhA.children[i]);
+
+            (function (index) {
+                stkhA.children[i].addEventListener("click", myScript);
+
+                function myScript() {
+                    alert(stkhA.children[i]);
+                    console.log(index);
+                }
+            })(i);
+        }
+    </script>
 
     <!-- Предотвращение внутренних угроз -->
     <div class="stkh-predot my-5 pt-5">
@@ -855,7 +889,8 @@ get_header();
         </div>
 
         <div class="container text-center mt-5">
-            <a href="" class="btn btn-primary p-13 text-white rounded-1 fw-bold px-5 ">Скачать</a>
+            <a href="https://by.stakhanovets.com/wp-content/uploads/2024/08/2024.-Стахановец.-РБ.-DLP-СИСТЕМА-ДЛЯ-ЗАЩИТЫ-ИНФОРМАЦИИ.pdf"
+               class="btn btn-primary p-13 text-white rounded-1 fw-bold px-5" target="_blank">Скачать</a>
         </div>
 
     </div>
@@ -1039,8 +1074,10 @@ get_header();
     </div>
 
     <!-- Рассчитать стоимость -->
-    <div class="stkh-price my-5">
+    <div class="stkh-price my-5 pt-5">
         <div class="container">
+            <h2 id="five" class="euro-medium text-center display-5">Связаться с менеджером</h2>
+
             <div class="row">
                 <div class="col-12 col-md-6 d-flex align-items-center">
                     <div class="bg-primary stkh-price__bg p-3 p-lg-4 p-xl-5 rounded">
@@ -1051,15 +1088,13 @@ get_header();
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4 offset-xl-1">
-                    <h2 class="euro-medium h3">Рассчитать стоимость</h2>
-                    <p class="lead text-danger">@TODO создать отдельную форму в Битрикс</p>
-                    <script data-b24-form="inline/75/si2z9c" data-skip-moving="true">(function (w, d, u) {
+                    <script data-b24-form="inline/87/irp9mx" data-skip-moving="true">(function (w, d, u) {
                             var s = d.createElement('script');
                             s.async = true;
                             s.src = u + '?' + (Date.now() / 180000 | 0);
                             var h = d.getElementsByTagName('script')[0];
                             h.parentNode.insertBefore(s, h);
-                        })(window, document, 'https://crm.stakhanovets.ru/upload/crm/form/loader_75_si2z9c.js');</script>
+                        })(window, document, 'https://crm.stakhanovets.ru/upload/crm/form/loader_87_irp9mx.js');</script>
 					<?php //echo do_shortcode( '[contact-form-7 id="0a92d7b" title="Контактная форма 1"]' ) ?>
                 </div>
             </div>
@@ -1140,7 +1175,20 @@ get_header();
         // init Swiper:
         const swiperMarquee = new Swiper('.marqueeSwiper', {
             // Optional parameters
-            slidesPerView: 3,
+            slidesPerView: 1,
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                }
+            },
             spaceBetween: 30,
             centeredSlides: true,
             speed: 6000,

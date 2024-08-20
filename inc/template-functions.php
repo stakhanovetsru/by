@@ -92,7 +92,7 @@ add_action( 'after_setup_theme', 'stakhanovets_content_width', 0 );
 function stakhanovets_scripts() {
 	wp_enqueue_style( 'stakhanovets-style', get_stylesheet_uri(), array(), _S_VERSION );
 
-	wp_enqueue_script( 'stakhanovets-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	//wp_enqueue_script( 'stakhanovets-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 }
 
@@ -179,12 +179,6 @@ function stakhanovets_es_module() {
 
 
 
-
-
-
-
-
-
     </script>
     <script type="module">
         import * as bootstrap from 'bootstrap'
@@ -193,7 +187,7 @@ function stakhanovets_es_module() {
 				echo esc_url( get_theme_file_uri( 'assets/js/fancybox.esm.js' ) ); ?>";
 
         Fancybox.bind(
-            'a[href*=".jpg"],a[href*=".jpeg"],a[href*=".png"],a[href*=".gif"], [data-fancybox="gallery"]',
+            'a[href*=".jpg"],a[href*=".jpeg"],a[href*=".png"],a[href*=".gif"], [data-fancybox="video"], [data-fancybox="gallery"]',
             {
                 groupAll: true,
                 // Your custom options

@@ -1,6 +1,6 @@
 <div class="stkh-faq my-5 py-0 py-xl-5">
     <div class="container">
-        <h2 class="euro-medium h2 text-center mb-5">Вопрос-ответ</h2>
+        <h2 id="seven" class="euro-medium h2 text-center mb-5">Вопрос-ответ</h2>
 
         <div class="accordion stkh-faq__accordion" id="accordionFAQ">
             <div class="accordion-item shadow rounded mb-4">
@@ -24,7 +24,7 @@
             </div>
             <div class="accordion-item shadow rounded mb-4">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed euro-medium lead rounded" type="button"
+                    <button class="accordion-button euro-medium lead rounded" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#panels-collapseTwo" aria-expanded="false"
                             aria-controls="panels-collapseTwo">
@@ -43,7 +43,7 @@
             </div>
             <div class="accordion-item shadow rounded mb-4">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed euro-medium lead rounded" type="button"
+                    <button class="accordion-button euro-medium lead rounded" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#panels-collapseThree" aria-expanded="false"
                             aria-controls="panels-collapseThree">
@@ -61,7 +61,7 @@
             </div>
             <div class="accordion-item shadow rounded mb-4">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed euro-medium lead rounded" type="button"
+                    <button class="accordion-button euro-medium lead rounded" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#panels-collapseFour" aria-expanded="false"
                             aria-controls="panels-collapseFour">
@@ -80,7 +80,7 @@
             </div>
             <div class="accordion-item shadow rounded mb-4">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed euro-medium lead rounded" type="button"
+                    <button class="accordion-button euro-medium lead rounded" type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#panels-collapseFive" aria-expanded="false"
                             aria-controls="panels-collapseFive">

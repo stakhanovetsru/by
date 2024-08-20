@@ -17,14 +17,18 @@
                     Президенте
                     Республики
                     Беларусь</p>
-                <div class="stkh-promo__buttons d-flex flex-column gap-3 d-md-block mt-5">
-                    <a class="btn btn-primary btn-lg text-white rounded-1 fw-bold me-md-4 d-block d-md-inline-block"
-                       type="button">Купить
-                    </a>
-                    <a class="btn btn-outline-light btn-lg text-white rounded-1 fw-bold d-block d-md-inline-block"
-                       type="button">Кнопка
-                        вторая
-                    </a>
+                <div class="stkh-promo__buttons row row-gap-4 mt-5">
+                    <div class="col col-lg-3">
+                        <a href="#five" class="btn btn-primary p-13 text-white rounded-1 fw-bold d-block"
+                           type="button">Купить
+                        </a>
+                    </div>
+                    <div class="col col-lg-3">
+                        <a href="https://stakhanovets.ru/demo/" target="_blank"
+                           class="btn btn-outline-light p-13 text-white rounded-1 d-block fw-normal"
+                           type="button">Онлайн демо
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

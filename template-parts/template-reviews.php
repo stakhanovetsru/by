@@ -1,6 +1,6 @@
 <div class="stkh-reviews my-5 py-0 py-xl-5">
     <div class="container">
-        <h2 class="euro-medium h2 text-center">Отзывы и публикации о системе Стахановец</h2>
+        <h2 id="six" class="euro-medium h2 text-center">Отзывы и публикации о системе Стахановец</h2>
         <p class="h4 text-center">Нам доверяют более 18 000 клиентов </p>
         <div class="row">
             <div class="col-12 col-xl-10 offset-xl-1">
@@ -62,7 +62,7 @@
         <!--Slider Reviews-->
         <div class="stkh-rivews__slider shadow rounded my-5 py-5">
             <div class="row">
-                <div class="col-12 col-xl-10 offset-xl-1">
+                <div class="col-12 col-xl-8 offset-xl-1">
 
                     <!-- Swiper -->
                     <div class="swiper reviews-swiper">
@@ -80,11 +80,15 @@
 
 							foreach ( $reviews as $review )  : ?>
                                 <div class="swiper-slide">
-
-                                    <img src="<?php echo esc_url( $review['review_logo'] ); ?>" alt="Логотип"
-                                         class="img-fluid">
-                                    <p class="lead my-5"><?php echo esc_textarea( $review['review_text'] ); ?></p>
-
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <img src="<?php echo esc_url( $review['review_logo'] ); ?>" alt="Логотип"
+                                                 class="img-fluid">
+                                        </div>
+                                        <div class="col-12 col-xl-10">
+                                            <p class="lead my-5"><?php echo esc_textarea( $review['review_text'] ); ?></p>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-auto">
                                             <img src="<?php echo esc_url( $review['review_photo'] ); ?>" alt="Логотип"
@@ -95,10 +99,12 @@
                                             <p class="small-12 text-uppercase mb-2"><?php echo esc_textarea( $review['review_desc'] ); ?></p>
                                             <p class="small-12 mb-2"><?php echo esc_url( $review['review_link'] ); ?></p>
                                         </div>
-                                        <div class="col">
-                                            <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/qq.svg' ) ); ?>"
-                                                 alt="Icon" class="img-fluid">
-                                            <p>Благодарность</p>
+                                        <div class="col d-flex align-items-end">
+
+                                            <p class="d-flex align-items-center m-0">
+                                                <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/file-pdf.svg' ) ); ?>"
+                                                     alt="Icon" class="img-fluid me-2"><span class="text-primary">Благодарность</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -125,6 +131,10 @@
                             },
                         });
                     </script>
+                </div>
+                <div class="col-12 col-xl-2">
+                    <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/qq.svg' ) ); ?>"
+                         alt="Icon" class="img-fluid">
                 </div>
             </div>
         </div>

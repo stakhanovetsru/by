@@ -126,6 +126,11 @@ body {
   font-size: 18px;
 }
 
+video {
+  width: 100%;
+  height: auto;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   color: $info;
@@ -257,6 +262,9 @@ body {
 
 .stkh-dev__bg {
   height: 380px;
+  @media (max-width: 576px) {
+    height: 92%;
+  }
 }
 
 .stkh-funcs__title {
@@ -387,6 +395,10 @@ button.nav-link.active {
   background-image: url("./build/images/uzor-2.svg");
   background-repeat: no-repeat;
   background-position: top left;
+
+  @media (max-width: 540px) {
+    background-image: none;
+  }
 }
 
 
@@ -733,7 +745,113 @@ CALC END
   }
 }
 
+.card__smi:hover .card__smi-bg {
+  opacity: 1;
+}
+
+
 .stkh-partner__bg {
   /* gradient/red-orange */
   background: linear-gradient(90deg, #E03A3A 0%, #FA7346 100%);
 }
+
+.swiper-button-next, .swiper-button-prev {
+  color: $primary
+}
+
+/*
+SMI START
+*/
+
+.dlp__smi_posts {
+  display: flex;
+  flex-wrap: wrap;
+
+  .dlp__smi_post {
+
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+
+  .dlp__smi_box {
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cfcfcb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+
+    &:hover,
+    &:active {
+      .dlp__site_desc span {
+        display: flex;
+      }
+    }
+  }
+
+  .dlp__smi_image {
+
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  }
+
+  .dlp__site_desc {
+
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    overflow: hidden;
+
+    & > img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    & > span {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(60deg, rgba(75, 75, 77, 0.591456651019783) 0%, rgba(233, 79, 77, 0.6) 66%, rgba(240, 129, 92, 1) 100%);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 15px;
+
+      & > span {
+        display: inline;
+
+        svg {
+          min-width: 18px;
+          min-height: 18px;
+        }
+      }
+    }
+  }
+
+  .dlp__smi_title {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+
+/*
+SMI END
+*/

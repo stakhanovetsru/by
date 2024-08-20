@@ -24,9 +24,10 @@
     <a class="skip-link screen-reader-text"
        href="#primary"><?php esc_html_e( 'Skip to content', 'stakhanovets' ); ?></a>
 
-    <header id="masthead" class="site-header py-3 py-lg-4 pt-xl-5">
+    <header id="masthead" class="site-header bg-white shadow-sm sticky-top py-3 py-lg-4 pt-xl-5">
         <div class="container">
-            <p class="m-0 me-2 text-end">+7 (499) 110-64-10</p>
+            <p class="m-0 me-2 text-end"><a href="tel:+74991106410" class="text-dark text-decoration-none">+7 (499)
+                    110-64-10</a></p>
             <div class="row align-items-center">
                 <div class="col-auto col-xl-4">
 					<?php
