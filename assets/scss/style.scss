@@ -109,7 +109,7 @@ $container-max-widths: (
 //@import "../../node_modules/bootstrap/scss/popover";
 // @import "../../node_modules/bootstrap/scss/carousel";
 // @import "../../node_modules/bootstrap/scss/spinners";
-//@import "../../node_modules/bootstrap/scss/offcanvas"; // Requires transitions
+@import "../../node_modules/bootstrap/scss/offcanvas"; // Requires transitions
 @import "../../node_modules/bootstrap/scss/placeholders";
 
 // Helpers
@@ -224,8 +224,9 @@ body {
 }
 
 .stkh-numbers__num {
-  width: 67px;
-  height: 67px;
+  font-size: 80px;
+  width: 98px;
+  height: 98px;
 }
 
 .stkh-works__wrap {
@@ -762,13 +763,11 @@ CALC END
 /*
 SMI START
 */
-
 .dlp__smi_posts {
   display: flex;
   flex-wrap: wrap;
 
   .dlp__smi_post {
-
     cursor: pointer;
     text-decoration: none;
     color: black;
@@ -787,22 +786,18 @@ SMI START
 
     &:hover,
     &:active {
-      .dlp__site_desc span {
+      .dlp__site_desc {
         display: flex;
       }
     }
   }
 
   .dlp__smi_image {
-
-    img {
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%);
-    }
+    width: 50%;
   }
 
   .dlp__site_desc {
-
+    display: none;
 
     width: 100%;
     height: 100%;
@@ -827,7 +822,7 @@ SMI START
       width: 100%;
       height: 100%;
       background-image: linear-gradient(60deg, rgba(75, 75, 77, 0.591456651019783) 0%, rgba(233, 79, 77, 0.6) 66%, rgba(240, 129, 92, 1) 100%);
-      display: none;
+      display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
@@ -851,7 +846,12 @@ SMI START
   }
 }
 
-
 /*
 SMI END
 */
+
+
+.swiper-button-disabled > img {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

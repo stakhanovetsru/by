@@ -34,7 +34,7 @@
                     <p class="text-white fs-p18 ">Нажимая «Подписаться», вы даете согласие на <a target="_blank"
                                                                                                  class="text-white subscribe__link fw-bold"
                                                                                                  rel="nofollow noopener noreferrer"
-                                                                                                 href="/soglashenie-na-obrabotku-personalnyx-dannyx/"
+                                                                                                 href="/privacy-policy/"
                                                                                                  title="Соглашение на обработку персональных данных">обработку
                             своих персональных данных</a>.</p>
                 </div>

@@ -29,13 +29,19 @@
             <p class="m-0 me-2 text-end"><a href="tel:+74991106410" class="text-dark text-decoration-none">+7 (499)
                     110-64-10</a></p>
             <div class="row align-items-center">
-                <div class="col-auto col-xl-4">
+                <div class="col-auto d-none d-lg-block col-xl-3">
 					<?php
 					the_custom_logo();
 					?>
                 </div><!-- .site-logo -->
-                <div class="col col-xl-8">
-                    <nav class="navbar navbar-expand-lg float-end float-lg-none bg-body">
+                <div class="col-12 col-sm col-xl-9 d-flex justify-content-end">
+                    <nav class="navbar navbar-expand-lg float-end float-xl-none bg-body w-100">
+                        <div class="d-inline-block d-lg-none w-auto float-start">
+							<?php
+							the_custom_logo();
+							?>
+                        </div>
+
                         <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
                                 data-bs-target="#stkh-navigation" aria-controls="stkh-navigation" aria-expanded="false"
                                 aria-label="Toggle navigation">
@@ -48,7 +54,7 @@
 								'menu_id'         => 'primary-menu',
 								'menu_class'      => 'navbar-nav w-100 d-flex justify-content-between',
 								'container'       => 'div',
-								'container_class' => 'collapse navbar-collapse',
+								'container_class' => 'collapse navbar-collapse ps-5 ps-lg-0',
 								'container_id'    => 'stkh-navigation',
 							)
 						);

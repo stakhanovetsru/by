@@ -10,7 +10,7 @@
  */
 
 ?>
- 
+
 <!-- Форма подписки -->
 <?php get_template_part( 'template-parts/template', 'subscribe' ); ?>
 
@@ -51,14 +51,18 @@
                     <div class="col-12 col-md-4">
                         <p class="lead euro-medium">Официальный дистрибьютор</p>
                         <p class="mb-1">ООО «Аксофт Интернейшнл»</p>
-                        <p class="mb-1">+7 (499) 110-64-10</p>
-                        <p class="mb-1">sales.belarus@axoftglobal.com</p>
+                        <p class="mb-1"><a href="tel:+74991106410" class="text-decoration-none text-dark">+7 (499)
+                                110-64-10</a></p>
+                        <p class="mb-1"><a href="mailto:sales.belarus@axoftglobal.com"
+                                           class="text-decoration-none text-dark">sales.belarus@axoftglobal.com</a></p>
                     </div>
                     <div class="col-12 col-md-4">
                         <p class="lead euro-medium">Доверенный партнер</p>
                         <p class="mb-1">ООО «Некст Нетворк»</p>
-                        <p class="mb-1">+375 17 399-73-47</p>
-                        <p class="mb-1">info@nextnet.by</p>
+                        <p class="mb-1"><a href="tel:+375173997347" class="text-decoration-none text-dark">+375 17
+                                399-73-47</a></p>
+                        <p class="mb-1"><a href="mailto:info@nextnet.by" class="text-decoration-none text-dark">info@nextnet.by</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -68,19 +72,30 @@
     <div class="container py-4">
         <div class="row  align-items-center">
             <div class="col">
-                <p class="m-0 lead fw-bold d-flex align-items-center"><img
-                            src="<?php echo esc_url( get_theme_file_uri( 'assets/images/page.svg' ) ); ?>"
-                            alt="Картинка для дизайна" class="img-fluid me-2" width="15">Скачать презентацию</p>
+                <p class="m-0 lead fw-bold d-flex align-items-center">
+                    <a href="/wp-content/uploads/2024/08/2024.-Стахановец.-РБ.-DLP-СИСТЕМА-ДЛЯ-ЗАЩИТЫ-ИНФОРМАЦИИ.pdf"
+                       target="_blank" class="text-decoration-none text-info">
+                        <img
+                                src="<?php echo esc_url( get_theme_file_uri( 'assets/images/page.svg' ) ); ?>"
+                                alt="Картинка для дизайна" class="img-fluid me-2"
+                                width="15"><span class="align-middle">Скачать презентацию</span>
+                    </a></p>
             </div>
             <div class="col">
-                <p class="m-0 small-12 d-flex align-items-center"><img
-                            src="<?php echo esc_url( get_theme_file_uri( 'assets/images/info.svg' ) ); ?>"
-                            alt="Иконка" class="img-fluid me-2" width="">Политика конфиденциальности</p>
+                <p class="m-0 small-12 d-flex align-items-center">
+                    <a href="/privacy-policy/" target="_blank" rel="noopener"
+                       class="text-decoration-none text-dark"><img
+                                src="<?php echo esc_url( get_theme_file_uri( 'assets/images/info.svg' ) ); ?>"
+                                alt="Иконка" class="img-fluid me-2" width=""><span class="align-middle">Политика конфиденциальности</span></a>
+                </p>
             </div>
             <div class="col">
-                <p class="m-0 small-12 d-flex align-items-center"><img
-                            src="<?php echo esc_url( get_theme_file_uri( 'assets/images/check.svg' ) ); ?>"
-                            alt="Иконка" class="img-fluid me-2" width="">Лицензионное соглашение</p>
+                <p class="m-0 small-12 d-flex align-items-center"><a href="/license-agreement/" rel="noopener"
+                                                                     target="_blank"
+                                                                     class="text-decoration-none text-dark"><img
+                                src="<?php echo esc_url( get_theme_file_uri( 'assets/images/check.svg' ) ); ?>"
+                                alt="Иконка" class="img-fluid me-2" width=""><span class="align-middle">Лицензионное соглашение</span></a>
+                </p>
             </div>
             <div class="col">
                 <p class="m-0 small-12 d-flex align-items-center"><img
@@ -93,6 +108,19 @@
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
+<!-- Принятие кукис -->
+<?php //get_template_part( 'template-parts/content', 'cookies' ); ?>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({block: "center", behavior: "smooth"});
+
+        });
+
+    });
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>

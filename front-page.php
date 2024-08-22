@@ -22,7 +22,7 @@ get_header();
     <!-- Сертификат -->
     <div class="stkh-sert my-5 pt-0 pt-lg-5">
         <div class="container">
-            <h2 id="one" class="h1 fw-bold text-center my-5">Сертификат ОАЦ</h2>
+            <h1 id="one" class="h1 fw-bold text-center my-5">Сертификат ОАЦ</h1>
             <div class="row">
                 <div class="col-12 col-md-7">
                     <div class="sert-block shadow rounded">
@@ -166,7 +166,7 @@ get_header();
 
         <div class="container stkh-numbers mt-5">
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4">
+            <div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 row-gap-5">
 				<?php
 				$data = [
 					1 => 'Высокая производительность при минимальных системных требованиях к серверу и end-point клиентам',
@@ -179,15 +179,15 @@ get_header();
 				$i    = 1;
 				while ( $i <= count( $data ) ): ?>
                     <div class="col d-flex align-items-stretch">
-                        <div class="shadow rounded">
+                        <div class="shadow-sm rounded w-100">
                             <div class="row d-flex align-items-center">
-                                <div class="col-12 col-md-auto">
-                                    <div class="stkh-numbers__num rounded d-flex align-items-center justify-content-center text-white bg-warning h2">
+                                <div class="col-12 col-sm-auto">
+                                    <div class="stkh-numbers__num m-auto m-sm-0 rounded d-flex align-items-center justify-content-center text-white bg-warning h2">
 										<?php echo $i; ?>
                                     </div>
                                 </div>
                                 <div class="col">
-									<?php echo "<p class='euro-medium m-0 pe-4'>{$data[$i]}</p>"; ?>
+									<?php echo "<p class='euro-medium lh-sm text-info m-0 p-4 ps-xl-0 py-lg-0'>{$data[$i]}</p>"; ?>
                                 </div>
                             </div>
                         </div>
@@ -631,7 +631,7 @@ get_header();
                                     разрешенных устройств по Flash ID.</p>
                             </div>
                         </div>
-                        <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/Транскрибация-разговора-в-текст.jpg' ) ); ?>"
+                        <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/usb_blocked_1.jpg' ) ); ?>"
                              alt="Демонстрация фото" class="img-fluid">
                     </div>
                 </div>
@@ -699,7 +699,7 @@ get_header();
 					5 => [
 						'title'   => 'Выявление нетипичного поведения',
 						'content' => 'DLP-cистема фиксирует все отклонения в поведении персонала, формируя отчеты, в которых детально отражает активность и отклонения от средних значений.',
-						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/graph_1.png',
+						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/category_1.png',
 					],
 					6 => [
 						'title'   => 'Граф связей',
@@ -707,7 +707,7 @@ get_header();
                             в почте программа визуализирует, с кем
                             и как регулярно сотрудник взаимодействует
                             в компании и за ее пределами.',
-						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/category_1.png',
+						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/graph_1.png',
 					],
 
 				];
@@ -770,18 +770,16 @@ get_header();
     </div>
 
     <script>
-
+        // @TODO сделать в мобильной версии подгрузку по индексу клика
         const stkhA = document.getElementById('stkh-analytics__divs');
 
         for (let i = 0; i < stkhA.children.length; i++) {
-
-            console.log(stkhA.children[i]);
 
             (function (index) {
                 stkhA.children[i].addEventListener("click", myScript);
 
                 function myScript() {
-                    alert(stkhA.children[i]);
+                    //alert(stkhA.children[i]);
                     console.log(index);
                 }
             })(i);
@@ -814,12 +812,12 @@ get_header();
 отслеживая хронологию. По ключевым словам 
 можно произвести поиск по всей базе данных 
 текста и найти скриншоты активности сотрудника за конкретный период.',
-						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/printer_1.png',
+						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/text_monitoring_1.png',
 					],
 					3 => [
 						'title'   => 'Мониторинг файловых операций',
 						'content' => 'Система отслеживает копирование, перенос, удаление файлов. Перехватывает документы, отправляемые через электронную почту, мессенджеры и социальные сети.',
-						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/text_monitoring_1.png',
+						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/Файловые-операции.jpg',
 					],
 					4 => [
 						'title'   => 'Мониторинг буфера обмена',
@@ -829,12 +827,12 @@ get_header();
 					5 => [
 						'title'   => '«Антифото» (Защита от фотографирования экрана)',
 						'content' => 'ПО отслеживает поведение сотрудников: при попытке сделать фото, скрывает окно с ценной информацией, блокирует ПК и направляет уведомление Службе безопасности. Эта инновационная опция на основе нейросети в разы увеличивает защиту информации от утечек.',
-						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/Файловые-операции.jpg',
+						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/antiphoto_1.jpg',
 					],
 					6 => [
 						'title'   => 'Контроль печати документов',
 						'content' => 'ПО перехватывает конфиденциальные документы, отправленные на печать. Это позволяет вовремя обнаружить и остановить утечку информации.',
-						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/antiphoto_1.jpg',
+						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/printer_1.png',
 					],
 
 				];
@@ -1009,7 +1007,7 @@ get_header();
 					3 => [
 						'title'   => 'Отклонения в активности',
 						'content' => 'Комплекс по объективным критериям сравниваетспециалистов, подразделения и филиалы. Поэтому внедрение DLP-системы позволяет узнать, сколько времени персонал проводит в интернете и рабочих программах.',
-						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/Захват-экрана-пользователя.jpg',
+						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/user_analitycs_deviation_1.png',
 					],
 					4 => [
 						'title'   => 'Карта рабочего дня',
@@ -1019,7 +1017,7 @@ get_header();
 					5 => [
 						'title'   => 'Онлайн-наблюдение экрана',
 						'content' => 'Руководитель может подключаться к монитору сотрудников и контролировать активность каждого подчиненного в реальном времени.',
-						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/user_analitycs_deviation_1.png',
+						'image'   => 'https://by.stakhanovets.com/wp-content/uploads/2024/08/Захват-экрана-пользователя.jpg',
 					],
 				];
 				$d     = 1;
@@ -1074,9 +1072,9 @@ get_header();
     </div>
 
     <!-- Рассчитать стоимость -->
-    <div class="stkh-price my-5 pt-5">
+    <div class="stkh-price my-5 pt-0 pt-lg-5">
         <div class="container">
-            <h2 id="five" class="euro-medium text-center display-5">Связаться с менеджером</h2>
+            <h2 id="five" class="euro-medium text-center display-5 mt-5">Связаться с менеджером</h2>
 
             <div class="row">
                 <div class="col-12 col-md-6 d-flex align-items-center">
@@ -1096,10 +1094,28 @@ get_header();
                             h.parentNode.insertBefore(s, h);
                         })(window, document, 'https://crm.stakhanovets.ru/upload/crm/form/loader_87_irp9mx.js');</script>
 					<?php //echo do_shortcode( '[contact-form-7 id="0a92d7b" title="Контактная форма 1"]' ) ?>
+                    <div class="d-none mt-n1 ps-4 small-12 z-3">Нажимая «Отправить», вы даете согласие на обработку
+                        своих
+                        персональных данных. - и так ссылку на политику конфиденциальности
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!--ХАК) -->
+    <style>
+        .b24-form-field-agreement {
+            display: none !important;
+        }
+
+        .b24-form-btn-block::after {
+            content: "Нажимая «Отправить», вы даете согласие на обработку своих персональных данных.";
+            display: block;
+            font-size: 13px;
+            color: #9b9b9b;
+            margin-top: 10px;
+        }
+    </style>
 
     <!-- Блок с партнёрами -->
     <div class="stkh-partner my-5">
@@ -1111,13 +1127,16 @@ get_header();
                         <div class="row">
                             <div class="col">
                                 <p class="mb-2">ООО «Аксофт Интернейшнл»</p>
-                                <p class="mb-2">+7 (499) 110-64-10</p>
-                                <p class="mb-2">sales.belarus@axoftglobal.com</p>
+                                <p class="mb-2"><a href="tel:+74991106410" class="text-decoration-none text-dark">+7
+                                        (499) 110-64-10</a></p>
+                                <p class="mb-2"><a href="mailto:sales.belarus@axoftglobal.com"
+                                                   class="text-decoration-none text-dark">sales.belarus@axoftglobal.com</a>
+                                </p>
                             </div>
                             <div class="col-auto d-flex align-items-end">
 
-                                <a href=""
-                                   target="_parent" rel="noopener nofollow">
+                                <a href="https://axoftglobal.ru/ru-by/"
+                                   target="_blank" rel="noopener nofollow noindex">
 
                                     <img src="https://stakhanovets.ru/wp-content/uploads/2024/07/axsoft-logo.png"
                                          alt="Logo" class="img-fluid" width="150">
@@ -1135,13 +1154,16 @@ get_header();
                         <div class="row">
                             <div class="col">
                                 <p class="mb-2">«NextNetwork»</p>
-                                <p class="mb-2">8 (044) 794 77 31</p>
-                                <p class="mb-2">info@nextnet.by</p>
+                                <p class="mb-2"><a href="tel:80447947731" class="text-decoration-none text-dark">8 (044)
+                                        794 77
+                                        31</a></p>
+                                <p class="mb-2"><a href="mailto:info@nextnet.by" class="text-decoration-none text-dark">info@nextnet.by</a>
+                                </p>
                             </div>
                             <div class="col-auto d-flex align-items-end">
 
-                                <a href=""
-                                   target="_parent" rel="noopener nofollow">
+                                <a href="https://www.nextnetwork.by/"
+                                   target="_blank" rel="noopener nofollow noindex">
 
                                     <img src="https://stakhanovets.ru/wp-content/uploads/2024/07/logo-nekt-netvork.svg"
                                          alt="Logo" class="img-fluid" width="150">
