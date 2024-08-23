@@ -34,8 +34,8 @@
             </div>
 
             <div class="col-12 col-sm-6 col-lg-7 col-xl-9">
-                <div class="row">
-                    <div class="col-12 mb-4">
+                <div class="row row-gap-5">
+                    <div class="col-12 xl-4">
                         <p>Компания «Стахановец» — ведущий российский разработчик одноименного программного комплекса
                             для защиты коммерческих данных, разрабатывает решения более 15 лет, является аккредитованной
                             ИТ-компанией от МинЦифры.
@@ -43,19 +43,19 @@
                             информации (DLP), проведения расследований, включая оценку поведения сотрудников на рабочем
                             месте и анализатор рисков.</p>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-xl-4">
                         <p class="mb-1">ООО «Стахановец»</p>
                         <p class="mb-1">ИНН 7725836290</p>
                         <p class="mb-1">ОГРН 1147746831220</p>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-xl-4">
                         <p class="lead euro-medium">Официальный дистрибьютор</p>
                         <p class="mb-1">ООО «Аксофт Интернейшнл»</p>
                         <p class="mb-1"><a href="tel:+" class="text-decoration-none text-dark"></a></p>
                         <p class="mb-1"><a href="mailto:sales.belarus@axoftglobal.com"
                                            class="text-decoration-none text-dark">sales.belarus@axoftglobal.com</a></p>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-xl-4">
                         <p class="lead euro-medium">Доверенный партнер</p>
                         <p class="mb-1">ООО «Некст Нетворк»</p>
                         <p class="mb-1"><a href="tel:+375173997347" class="text-decoration-none text-dark">+375 17
@@ -69,7 +69,7 @@
     </div><!-- .site-info -->
 
     <div class="container py-4">
-        <div class="row  align-items-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 row-gap-3 align-items-center">
             <div class="col">
                 <p class="m-0 lead fw-bold d-flex align-items-center">
                     <a href="/wp-content/uploads/2024/08/2024.-Стахановец.-РБ.-DLP-СИСТЕМА-ДЛЯ-ЗАЩИТЫ-ИНФОРМАЦИИ.pdf"
@@ -108,7 +108,7 @@
 </div><!-- #page -->
 
 <!-- Принятие кукис -->
-<?php //get_template_part( 'template-parts/content', 'cookies' ); ?>
+<?php get_template_part( 'template-parts/content', 'cookies' ); ?>
 <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

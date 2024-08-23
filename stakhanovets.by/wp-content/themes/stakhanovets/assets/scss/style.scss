@@ -855,3 +855,16 @@ SMI END
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.site-cookies {
+  bottom: 0;
+  left: 0;
+  transform: translateY(100vh);
+  transition: transform .5s cubic-bezier(0.4, 0.0, 0.2, 1), visibility .5s linear 0s;
+  visibility: hidden;
+}
+
+.site-cookies.cookies-show {
+  transform: translateY(0);
+  visibility: visible;
+}

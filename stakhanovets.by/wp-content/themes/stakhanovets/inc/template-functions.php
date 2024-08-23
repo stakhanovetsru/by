@@ -217,9 +217,6 @@ function stakhanovets_es_module() {
       }
     }
 
-
-
-
     </script>
     <script type="module">
         import * as bootstrap from 'bootstrap'
