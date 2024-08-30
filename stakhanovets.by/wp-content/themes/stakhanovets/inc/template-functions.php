@@ -92,8 +92,9 @@ add_action( 'after_setup_theme', 'stakhanovets_content_width', 0 );
 function stakhanovets_scripts() {
 	wp_enqueue_style( 'stakhanovets-style', get_stylesheet_uri(), array(), _S_VERSION );
 
-	//wp_enqueue_script( 'stakhanovets-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	if ( wp_is_mobile() ) {
+		wp_enqueue_script( 'stakhanovets-scripts', get_template_directory_uri() . '/build/js/mobile.min.js', array(), _S_VERSION, true );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'stakhanovets_scripts' );
@@ -216,6 +217,13 @@ function stakhanovets_es_module() {
 		echo esc_url( get_theme_file_uri( 'assets/js/bootstrap.esm.min.js' ) ); ?>"
       }
     }
+
+
+
+
+
+
+
 
     </script>
     <script type="module">
@@ -357,4 +365,62 @@ function dd( $input, $collapse = false ) {
 	};
 
 	call_user_func( $recursive, $input );
+}
+
+
+// custom css and js
+add_action( 'admin_enqueue_scripts', 'stakh_admin_enqueue_scripts' );
+
+function stakh_admin_enqueue_scripts( $hook ) {
+
+	//dd( $hook );
+
+	if ( 'post.php' != $hook ) {
+		return;
+	}
+
+	?>
+    <script>
+        window.addEventListener('load', function () {
+
+            if (window.location.hash == '') {
+                return false;
+            }
+
+            let el = document.querySelector(window.location.hash);
+
+            if (el !== null) {
+
+                el.scrollIntoView({behavior: 'smooth'});
+
+            }
+            //alert(1);
+        }, false);
+
+
+    </script>
+	<?php
+
+}
+
+
+// Удаление всех блоков кроме указанных
+add_filter( 'allowed_block_types_all', 'example_allowed_block_types', 10, 2 );
+
+/**
+ * @param array|bool $allowed_block_types Array of block type slugs, or boolean to enable/disable all.
+ * @param object $block_editor_context The current block editor context.
+ *
+ * @return array The array of allowed block types.
+ */
+function example_allowed_block_types( $allowed_block_types, $block_editor_context ) {
+
+	$allowed_block_types = array(
+		'core/heading',     // Heading block
+		'core/image',       // Image block
+		'core/list',        // List block
+		'core/paragraph',   // Paragraph block
+	);
+
+	return $allowed_block_types;
 }

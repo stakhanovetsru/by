@@ -32,13 +32,19 @@
                 </div>
             </div>
         </div>
+
+		<?php if ( get_edit_post_link() ) : ?>
+			<?php
+			echo '<a href="' . get_edit_post_link() . '#carbon_fields_container_a3a1b702' . '" class="btn btn-link btn-outline-light text-white my-3">Изменить</a>';
+			?>
+		<?php endif; ?>
     </div>
 </div>
 
 <div class="stkh-features bg-white shadow rounded mt-n5 z-2 p-3 p-lg-4 p-xl-5">
     <div class="container">
         <div class="row row-gap-4">
-            <div class="col-12 col-md-6 col-xl-3 mb-4 mb-md-0">
+            <div class="col-12 col-md-6 col-xl-3">
                 <div class="d-flex flex-row">
                     <div class="stkh-feature__square bg-primary rounded d-flex justify-content-center align-items-center">
                         <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/check-square.svg' ) ); ?>"
@@ -49,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-3 mb-4 mb-md-0">
+            <div class="col-12 col-md-6 col-xl-3">
                 <div class="d-flex flex-row">
                     <div class="stkh-feature__square bg-primary rounded d-flex justify-content-center align-items-center">
                         <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/check-square.svg' ) ); ?>"
@@ -60,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-3 mb-4 mb-md-0">
+            <div class="col-12 col-md-6 col-xl-3">
                 <div class="d-flex flex-row">
                     <div class="stkh-feature__square bg-primary rounded d-flex justify-content-center align-items-center">
                         <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/check-square.svg' ) ); ?>"

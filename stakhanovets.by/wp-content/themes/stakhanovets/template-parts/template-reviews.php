@@ -4,18 +4,30 @@
         <p class="h4 text-center">Нам доверяют более 18 000 клиентов </p>
         <div class="row">
             <div class="col-12 col-xl-10 offset-xl-1">
-                <div class="row row-cols-2 row-cols-lg-3 row-gap-4 py-5">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-gap-4 py-5">
                     <div class="col">
-                        <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/r1.svg' ) ); ?>"
-                             alt="Logo" class="img-fluid">
+                        <a href="https://startpack.ru/application/stakhanovets" title="" target="_blank"
+                           rel="nofollow noopener noreferrer">
+                            <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/r1.svg' ) ); ?>"
+                                 alt="Logo" class="img-fluid">
+                        </a>
+
                     </div>
                     <div class="col">
-                        <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/r2.svg' ) ); ?>"
-                             alt="Logo" class="img-fluid">
+                        <a href="https://yandex.ru/maps/org/stakhanovets/180742432413/reviews/" title="" target="_blank"
+                           rel="nofollow noopener noreferrer">
+                            <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/r2.svg' ) ); ?>"
+                                 alt="Logo" class="img-fluid">
+                        </a>
+
                     </div>
                     <div class="col">
-                        <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/r3.svg' ) ); ?>"
-                             alt="Logo" class="img-fluid">
+                        <a href="https://yandex.ru/maps/org/stakhanovets/180742432413/reviews/" title="" target="_blank"
+                           rel="nofollow noopener noreferrer">
+                            <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/r3.svg' ) ); ?>"
+                                 alt="Logo" class="img-fluid">
+                        </a>
+
                     </div>
                 </div>
 
@@ -69,29 +81,29 @@
                         <div class="swiper-wrapper">
 
 							<?php
-							//if ( false === $posts = get_transient( 'stkh_reviews_cache' ) ) {
-							$response = wp_remote_get(
-								add_query_arg(
-									array(
-										'per_page' => 18,
-										'orderby'  => 'date',
-										'order'    => 'asc',
-									),
-									'https://stakhanovets.ru/wp-json/wp/v2/reviews'
-								)
-							);
+							if ( false === $posts = get_transient( 'stkh_reviews_cache' ) ) {
+								$response = wp_remote_get(
+									add_query_arg(
+										array(
+											'per_page' => 18,
+											'orderby'  => 'date',
+											'order'    => 'asc',
+										),
+										'https://stakhanovets.ru/wp-json/wp/v2/reviews'
+									)
+								);
 
-							if ( 200 === wp_remote_retrieve_response_code( $response ) ) {
-								$posts = json_decode( wp_remote_retrieve_body( $response ), true );
-								//set_transient( 'stkh_reviews_cache', $posts, HOUR_IN_SECONDS );
+								if ( 200 === wp_remote_retrieve_response_code( $response ) ) {
+									$posts = json_decode( wp_remote_retrieve_body( $response ), true );
+									set_transient( 'stkh_reviews_cache', $posts, HOUR_IN_SECONDS );
+								}
 							}
-							//}
 
 							//dd( $posts );
 
 							if ( $posts ) :
 								foreach ( $posts as $post ) : ?>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide container-fluid">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="https://stakhanovets.by/wp-content/uploads/2024/08/stkh-logo.svg"
@@ -102,18 +114,18 @@
                                                 <p class="lead my-5"><?php echo wp_kses( $post['content']['rendered'], 'post' ); ?></p>
                                             </div>
                                         </div>
-                                        <div class="row d-flex fl align-items-center mt-5">
+                                        <div class="row d-flex align-items-center mt-5">
                                             <div class="col-auto">
                                                 <img src="https://stakhanovets.by/wp-content/uploads/2024/08/review_user_avatar.svg"
                                                      alt="Логотип"
                                                      class="img-fluid rounded-circle" width="81">
                                             </div>
-                                            <div class="col">
+                                            <div class="col-12 col-sm">
                                                 <p class="euro-medium lead mb-2"><?php echo esc_textarea( $post['name'] ); ?></p>
                                                 <p class="small-12 text-uppercase mb-2"><?php echo esc_textarea( $post['title']['rendered'] ); ?></p>
                                                 <p class="small-12 mb-2"><?php echo esc_url( $review['review_link'] ); ?></p>
                                             </div>
-                                            <div class="col d-flex align-items-end">
+                                            <div class="col-12 col-sm d-flex align-items-end">
 
                                                 <p class="m-0">
                                                     <a href="<?php echo 'https://stakhanovets.ru' . $post['reviews_scan'] ?>"
@@ -147,9 +159,9 @@
                 </div>
                 <div class="col-12 col-xl-2 d-flex align-items-start flex-column ">
                     <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/qq.svg' ) ); ?>"
-                         alt="Icon" class="img-fluid">
+                         alt="Icon" class="img-fluid d-none d-xl-inline">
 
-                    <div class="d-flex mt-auto mb-5">
+                    <div class="d-flex mt-auto mb-0 mb-lg-5">
                         <div class="_swiper-button-next mx-2">
                             <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/arrow-left-square.svg' ) ); ?>"
                                  alt="icon" class="">

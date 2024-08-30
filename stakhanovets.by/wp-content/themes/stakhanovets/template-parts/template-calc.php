@@ -1,8 +1,3 @@
-<?php
-$calc_cta_text    = get_query_var( 'calc_cta_text' );
-$calc_cta_url     = get_query_var( 'calc_cta_url' );
-$calc_cta_isblank = get_query_var( 'calc_cta_isblank' );
-?>
 <script src="https://stakhanovets.ru/rescalc/rescalc.js" id='script-rescalc-js'></script>
 <script>
     function CalculateAll() {
@@ -26,365 +21,259 @@ $calc_cta_isblank = get_query_var( 'calc_cta_isblank' );
     }
 </script>
 
-<form class="stakh__calc" id="calcform" name="calcform">
+<form id="calcform" class="stkh-calc" name="calcform">
 
-    <div class="stakh__calc_row">
-        <div class="stakh__calc_left stakh__calc_left_top">
-            <label class="stakh__calc_caption"
-                   for="sql_shared"><?php esc_html_e( 'Расположение SQL-сервера', 'sth' ); ?></label>
-            <div class="stakh__switch">
-                <label class="checkbox-ios" for="sql_shared">
-                    <span class="stakh__switch_label"><?php esc_html_e( 'На одной машине с сервером комплекса', 'sth' ); ?></span>
-                    <input type="checkbox" name="sql_shared" id="sql_shared" checked>
-                    <span class="checkbox-ios-switch"></span>
-                </label>
-            </div>
-            <div class="stakh__calc_tl">
-                <div class="stakh__input">
-                    <div class="stakh__label">
-                        <div class="stakh__label_wrap">
-                            <label for="num_onlines"><?php esc_html_e( 'Количество клиентов', 'sth' ); ?></label>
-                            <div data-type="stakh-tip">
-                                <div>Укажите планируемое количество<br>
-                                    клиентов в организации для наблюдения
-                                </div>
-                            </div>
+    <div class="row row-gap-5">
+        <div class="col-12 col-md-6">
+            <div class="px-4 px-xl-5">
+                <h2
+                        class="display-7"><?php esc_html_e( 'Онлайн клиенты', 'sth' ); ?></h2>
+                <div class="row">
+                    <div class="col-12 col-xxl-6 py-2 py-xxl-4">
+                        <label class="form-label"
+                               for="num_onlines"><?php esc_html_e( 'Количество клиентов', 'sth' ); ?></label>
+                        <input class="form-control form-control-lg rounded-1" name="num_onlines"
+                               id="num_onlines"
+                               type="text"
+                               value="500">
+                    </div>
+                    <div class="col-12 col-xxl-6 py-2 py-xxl-4">
+                        <label class="form-label"
+                               for="onlines_sshots_interval"><?php esc_html_e( 'Интервал съема скриншотов (сек)', 'sth' ); ?></label>
+                        <input class="form-control form-control-lg rounded-1" name="onlines_sshots_interval"
+                               id="onlines_sshots_interval" type="text" value="300">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="onlines_audio"
+                                   id="onlines_audio">
+                            <label class="form-check-label"
+                                   for="onlines_audio"><?php esc_html_e( 'Вести постоянную аудиозапись (передача на сервер)', 'sth' ); ?></label>
                         </div>
                     </div>
-                    <input name="num_onlines" id="num_onlines" type="text" value="500">
                 </div>
-                <div class="stakh__input">
-                    <div class="stakh__label">
-                        <div class="stakh__label_wrap">
-                            <label for="onlines_sshots_interval"><?php esc_html_e( 'Интервал съема скриншотов (сек)', 'sth' ); ?></label>
-                            <div data-type="stakh-tip">
-                                <div>Укажите временной интервал<br>
-                                    через который будет производиться<br>
-                                    съемка экранов на клиентах<
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <input name="onlines_sshots_interval" id="onlines_sshots_interval" type="text" value="300">
-                </div>
-            </div>
-            <div class="stakh__switch">
-                <label class="checkbox-ios" for="onlines_audio">
-                    <span class="stakh__switch_label"><?php esc_html_e( 'Вести постоянную аудиозапись (передача на сервер)', 'sth' ); ?></span>
-                    <input type="checkbox" name="onlines_audio" id="onlines_audio">
-                    <span class="checkbox-ios-switch"></span>
-                </label>
             </div>
         </div>
-
-        <div class="stakh__calc_right stakh__calc_right_top">
-            <div class="stakh__calc_tr">
-                <div class="stakh__input">
-                    <div class="stakh__label">
-                        <div class="stakh__label_wrap">
-                            <label for="avg_sshot_size"><?php esc_html_e( 'Средний размер скриншота (КБ)', 'sth' ); ?></label>
-                            <div data-type="stakh-tip">
-                                <div>Зависит от качества (минимум 25 КБ)</div>
-                            </div>
-                        </div>
+        <div class="col-12 col-md-6">
+            <div class="px-4 px-xl-5">
+                <h2 class="display-7">
+					<?php esc_html_e( 'Отложенные клиенты', 'sth' ); ?></h2>
+                <div class="row">
+                    <div class="col-12 col-xxl-6 py-2 py-xxl-4">
+                        <label class="form-label"
+                               for="num_pp"><?php esc_html_e( 'Количество клиентов', 'sth' ); ?><sup
+                                    class="fields-calc__sup">1</sup></label>
+                        <input class="form-control form-control-lg rounded-1" name="num_pp" id="num_pp"
+                               type="text"
+                               value="0">
                     </div>
-                    <input name="avg_sshot_size" id="avg_sshot_size" type="text" value="75">
-                </div>
-                <div class="stakh__input">
-                    <div class="stakh__label">
-                        <div class="stakh__label_wrap">
-                            <label for="retro"><?php esc_html_e( 'Ретроспектива хранения (дней)', 'sth' ); ?></label>
-                            <div data-type="stakh-tip">
-                                <div>Укажите интервал хранения<br>
-                                    истории записываемых действий<br>
-                                    в базе данных
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-12 col-xxl-6 py-2 py-xxl-4">
+                        <label class="form-label"
+                               for="pp_sshots_interval"><?php esc_html_e( 'Интервал съема скриншотов (сек)', 'sth' ); ?></label>
+                        <input class="form-control form-control-lg rounded-1" name="pp_sshots_interval"
+                               id="pp_sshots_interval"
+                               type="text" value="300">
                     </div>
-                    <input name="retro" id="retro" type="text" value="30">
-                </div>
-            </div>
-
-            <div class="stakh__calc_tr">
-                <div class="stakh__input">
-                    <div class="stakh__label">
-                        <div class="stakh__label_wrap">
-                            <label for="avg_sc_size"><?php esc_html_e( 'Средний объем файлов теневых копий (МБ)', 'sth' ); ?></label>
-                            <div data-type="stakh-tip">
-                                <div>Укажите примерный средний объем<br>
-                                    отправляемых в Интернет/e-mail/flash<br>
-                                    файлов на человека в день.
-                                </div>
-                            </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="pp_audio" id="pp_audio">
+                            <label class="form-check-label"
+                                   for="pp_audio"><?php esc_html_e( 'Вести постоянную аудиозапись (передача на сервер)', 'sth' ); ?></label>
                         </div>
-                    </div>
-                    <input name="avg_sc_size" id="avg_sc_size" type="text" value="3">
-                </div>
-
-                <div class="fields-calc__item stakh__input">
-                    <div class="stakh__label">
-                        <div class="stakh__label_wrap">
-                            <label class="fields-calc__label"
-                                   for="workdays"><?php esc_html_e( 'Рабочих дней в неделе', 'sth' ); ?></label>
-                            <div data-type="stakh-tip">
-                                <div>Укажите количество <br>
-                                    рабочих дней в неделе
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-select site-form__input stakh__select">
-                        <div class="item-select__current">5</div>
-                        <div class="item-select__list">
-                            <div class="item-select__option" data-value="4">4</div>
-                            <div class="item-select__option" data-value="5">5</div>
-                            <div class="item-select__option" data-value="6">6</div>
-                            <div class="item-select__option" data-value="7">7</div>
-                        </div>
-                        <input type="hidden" name="workdays" id="workdays" value="5" class="item-select__hidden">
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-
-    <div class="stakh__calc_row stakh__calc_row_lower">
-        <div class="stakh__calc_left">
-
-            <div class="stakh-collapsed" data-type="stakh-collapsed">
-                <button type="button" class="stakh-btn-collapsed" data-type="stakh-btn-collapsed">
-                    <span><?php esc_html_e( 'Отложенные клиенты', 'sth' ); ?></span>
-					<?php get_template_part( "/template-parts/svg/dropdown-arrow" ) ?>
-                </button>
-
-                <div class="stakh-collapsed-content" data-type="stakh-collapsed-content">
-                    <div class="stakh__calc_subtitle">Отложенные клиенты</div>
-                    <span>Накапливают данные локально и передают на сервер только по запросу</span>
-                    <div class="stakh__calc_tl">
-                        <div class="stakh__input">
-                            <div class="stakh__label">
-                                <div class="stakh__label_wrap">
-                                    <label for="num_pp"><?php esc_html_e( 'Количество клиентов', 'sth' ); ?></label>
-                                    <div data-type="stakh-tip">
-                                        <div>Отложенные клиенты - работающие в режиме<br>
-                                            отложенного мониторинга, накапливают данные<br> локально и передают их на
-                                            сервер
-                                            <br>только по запросу (при построении отчетов).
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <input name="num_pp" id="num_pp" type="text" value="0">
-                        </div>
-                        <div class="stakh__input">
-                            <div class="stakh__label">
-                                <div class="stakh__label_wrap">
-                                    <label for="pp_sshots_interval"><?php esc_html_e( 'Интервал съема скриншотов (сек)', 'sth' ); ?></label>
-                                    <div data-type="stakh-tip">
-                                        <div>Укажите временной интервал<br>
-                                            через который будет производиться<br>
-                                            съемка экранов на клиентах
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <input name="pp_sshots_interval" id="pp_sshots_interval" type="text" value="300">
-                        </div>
-                    </div>
-                    <div class="stakh__switch">
-                        <label class="checkbox-ios" for="pp_audio">
-                            <span class="stakh__switch_label"><?php esc_html_e( 'Вести постоянную аудиозапись (передача на сервер)', 'sth' ); ?></span>
-                            <input type="checkbox" name="pp_audio" id="pp_audio">
-                            <span class="checkbox-ios-switch"></span>
+        <div class="col-12 my-4">
+            <div class="px-4 px-xl-5 bg-body-tertiary py-4 rounded">
+                <div class="row row-gap-4 row-cols-1 row-cols-xl-5">
+                    <div class="col d-flex flex-column">
+                        <label class="fields-calc__label" for="avg_sshot_size">
+							<?php esc_html_e( 'Средний размер скриншота (КБ)', 'sth' ); ?>
+                            <span
+                                    class="small d-block"><?php esc_html_e( 'Зависит от качества (минимум 25 КБ)', 'sth' ); ?></span>
                         </label>
+                        <input class="form-control form-control-lg rounded-1 mt-auto" name="avg_sshot_size"
+                               id="avg_sshot_size"
+                               type="text" value="75">
+                    </div>
+                    <div class="col d-flex flex-column">
+                        <label class="fields-calc__label"
+                               for="avg_sc_size"><?php esc_html_e( 'Средний объем файлов теневых копий исходяшего трафика (МБ)', 'sth' ); ?>
+                            <sup class="fields-calc__sup">2</sup></label>
+                        <input class="form-control form-control-lg rounded-1 mt-auto" name="avg_sc_size"
+                               id="avg_sc_size" type="text"
+                               value="3">
+                    </div>
+                    <div class="col d-flex flex-column">
+                        <label class="fields-calc__label"
+                               for="retro"><?php esc_html_e( 'Ретроспектива хранения (дней)', 'sth' ); ?></label>
+                        <input class="form-control form-control-lg rounded-1 mt-auto" name="retro"
+                               id="retro" type="text" value="30">
+                    </div>
+                    <div class="col d-flex flex-column">
+                        <label class="fields-calc__label"
+                               for="workdays"><?php esc_html_e( 'Рабочих дней в неделе', 'sth' ); ?></label>
+
+                        <div class="item-select site-form__input mt-auto">
+                            <select class="form-select form-select-lg" aria-label="Large select">
+                                <option value="4" data-value="4">4</option>
+                                <option value="5" data-value="5" selected>5</option>
+                                <option value="6" data-value="6">6</option>
+                                <option value="7" data-value="7">7</option>
+                            </select>
+                            <input type="hidden" name="workdays" id="workdays" value="5"
+                                   class="item-select__hidden">
+                        </div>
+                    </div>
+                    <div class="col d-flex flex-column">
+                        <label class="fields-calc__label"
+                               for="sql_shared"><?php esc_html_e( 'Расположение SQL-сервера', 'sth' ); ?></label>
+                        <div class="form-check form-switch mt-auto">
+                            <input type="checkbox" class="form-check-input" name="sql_shared"
+                                   id="sql_shared" role="switch" checked>
+                            <label class="form-check-label"
+                                   for="sql_shared"><?php esc_html_e( 'На одной машине с сервером комплекса', 'sth' ); ?></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center my-5">
+                    <input class="btn btn-primary btn-lg text-white rounded-1" onclick="CalculateAll()"
+                           type="button"
+                           value="<?php esc_html_e( 'Рассчитать', 'sth' ); ?>"/>
+                </div>
+                <div class="border rounded-1 p-4 bg-white">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 border-end">
+                            <p class="small px-2 m-0"><sup class="fields-calc__sup">1</sup><span>Отложенные клиенты - работающие в режиме отложенного мониторинга, они накапливают данные локально и передают на сервер только по запросу (при построении соотв. отчета).</span>
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <p class="small px-3 m-0"><sup class="fields-calc__sup">2</sup><span>Укажите примерный средний объем отправляемых в Интернет/e-mail/flash файлов на человека в день.</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="stakh__calc_right">
         </div>
     </div>
 
-    <div class="stakh__calc_row stakh__calc_submit">
-        <input class="ver__btn" onclick="CalculateAll()" type="button"
-               value="<?php esc_html_e( 'Рассчитать', 'sth' ); ?>"/>
-    </div>
 
-    <section id="results" style="display: none;">
-
-        <div class="stakh__calc_subtitle stakh__calc_results"><?php esc_html_e( 'Итоговый расчет', 'sth' ); ?>:</div>
-
-        <div class="stakh__calc_res">
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_onlines_traffic"><?php _e( 'Трафик от одного онлайн-клиента к серверу', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_onlines_traffic" id="res_onlines_traffic" type="text" value="">
+    <section class="" id="results" style="display: none;">
+        <div class="row">
+            <div class="col-12 my-5">
+                <h2 class="display-6 px-4 px-xl-5"><?php esc_html_e( 'Итоговый расчет', 'sth' ); ?>
+                    :
+                </h2>
             </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_pp_traffic"><?php _e( 'Трафик от одного отложенного-клиента к серверу', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
+            <div class="col-12">
+                <div class="p-4 p-xl-5 bg-body-tertiary rounded">
+                    <div class="row row-gap-4 stkh-calc-results">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_onlines_traffic"><?php _e( 'Трафик от одного онлайн-клиента к серверу', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_onlines_traffic"
+                                   id="res_onlines_traffic" type="text" value="">
                         </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_pp_traffic"><?php _e( 'Трафик от одного отложенного-клиента к серверу', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_pp_traffic"
+                                   id="res_pp_traffic"
+                                   type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_summary_traffic"><?php esc_html_e( 'Суммарный трафик от всех клиентов к серверу', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_summary_traffic"
+                                   id="res_summary_traffic" type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_pp_space"><?php esc_html_e( 'Необходимое место на отложенных машинах', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_pp_space"
+                                   id="res_pp_space"
+                                   type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_server_space"><?php esc_html_e( 'Необходимое место на сервере для теневых копий', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_server_space"
+                                   id="res_server_space" type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_server_drive"><?php esc_html_e( 'Тип диска на сервере для теневых копий', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_server_drive"
+                                   id="res_server_drive" type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_sql_space"><?php esc_html_e( 'Ориентировочный размер БД SQL', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_sql_space"
+                                   id="res_sql_space"
+                                   type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_sql_drive"><?php esc_html_e( 'Рекомендуемый тип диска для БД SQL', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_sql_drive"
+                                   id="res_sql_drive"
+                                   type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-8 col-lg-4">
+                            <label class="form-label"
+                                   for="res_sql_edition"><?php esc_html_e( 'Рекомендуемая редакция SQL-сервера', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_sql_edition"
+                                   id="res_sql_edition" type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_server_cores"><?php esc_html_e( 'Рекомендуемое кол-во ядер CPU-сервера', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_server_cores"
+                                   id="res_server_cores" type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <label class="form-label"
+                                   for="res_server_ram"><?php esc_html_e( 'Рекомендуемый объем RAM сервера (ГБ)', 'sth' ); ?></label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_server_ram"
+                                   id="res_server_ram"
+                                   type="text" value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="res_sql_cores"
+                             style="display: none;">
+                            <label
+                                    class="form-label"><?php esc_html_e( 'Рекомендуемое кол-во ядер CPU SQL-сервера', 'sth' ); ?>
+                            </label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_sql_cores"
+                                   type="text"
+                                   value="">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="res_sql_ram" style="display: none;">
+                            <label
+                                    class="form-label"><?php esc_html_e( 'Рекомендуемый объем RAM SQL-сервера (ГБ)', 'sth' ); ?>
+                            </label>
+                            <input class="form-control form-control-lg rounded-1 mt-auto" readonly
+                                   name="res_sql_ram"
+                                   type="text" value="">
+                        </div>
+
                     </div>
                 </div>
-                <input readonly name="res_pp_traffic" id="res_pp_traffic" type="text" value="">
-            </div>
 
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_summary_traffic"><?php esc_html_e( 'Суммарный трафик от всех клиентов к серверу', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_summary_traffic" id="res_summary_traffic" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_pp_space"><?php esc_html_e( 'Необходимое место на отложенных машинах', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_pp_space" id="res_pp_space" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_server_space"><?php esc_html_e( 'Необходимое место на сервере для теневых копий', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_server_space" id="res_server_space" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_server_drive"><?php esc_html_e( 'Тип диска на сервере для теневых копий', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_server_drive" id="res_server_drive" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_sql_space"><?php esc_html_e( 'Ориентировочный размер БД SQL', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_sql_space" id="res_sql_space" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_sql_drive"><?php esc_html_e( 'Рекомендуемый тип диска для БД SQL', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_sql_drive" id="res_sql_drive" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_sql_edition"><?php esc_html_e( 'Рекомендуемая редакция SQL-сервера', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_sql_edition" id="res_sql_edition" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_server_cores"><?php esc_html_e( 'Рекомендуемое кол-во ядер CPU-сервера', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_server_cores" id="res_server_cores" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label for="res_server_ram"><?php esc_html_e( 'Рекомендуемый объем RAM сервера (ГБ)', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_server_ram" id="res_server_ram" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly" id="res_sql_cores" style="display: none;">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label><?php esc_html_e( 'Рекомендуемое кол-во ядер CPU SQL-сервера', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_sql_cores" type="text" value="">
-            </div>
-
-            <div class="stakh__input stakh__input_readonly" id="res_sql_ram" style="display: none;">
-                <div class="stakh__label">
-                    <div class="stakh__label_wrap">
-                        <label><?php esc_html_e( 'Рекомендуемый объем RAM SQL-сервера (ГБ)', 'sth' ); ?></label>
-                        <div data-type="stakh-tip">
-                            <div>Подсказка</div>
-                        </div>
-                    </div>
-                </div>
-                <input readonly name="res_sql_ram" type="text" value="">
             </div>
         </div>
-
-        <div class="stakh__calc_row stakh__calc_refresh">
-            <input class="ver__btn" onclick="RefreshAll()" type="button"
-                   value="<?php esc_html_e( 'Скрыть', 'sth' ); ?>"/>
-			<?php if ( strlen( $calc_cta_text ) ) { ?>
-                <a target="<?= isset( $calc_cta_isblank ) ? '_blank' : '_self' ?>" rel="nofollow noopener noreferrer"
-                   href="<?= $calc_cta_url ?>"
-                   class="btn-site btn-bg index-video__btn pak__main_cta dlp__main_cta dlp__secondary_cta">
-                    <span><?= $calc_cta_text ?></span>
-                </a>
-			<?php } ?>
-        </div>
-
     </section>
 </form>

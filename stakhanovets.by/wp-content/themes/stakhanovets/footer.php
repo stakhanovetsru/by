@@ -31,6 +31,9 @@
                     <li class="mb-1"><a href="/#six" class="text-decoration-none text-dark">Отзывы и публикации</a></li>
                     <li class="mb-1"><a href="/#seven" class="text-decoration-none text-dark">FAQ</a></li>
                 </ul>
+
+                <!-- Иконки социальных сетей -->
+				<?php get_template_part( 'template-parts/content', 'social' ); ?>
             </div>
 
             <div class="col-12 col-sm-6 col-lg-7 col-xl-9">

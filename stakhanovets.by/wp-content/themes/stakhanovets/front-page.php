@@ -59,15 +59,15 @@ get_header();
     <div class="stkh-system my-5 pt-5">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-xl-6">
                     <h2 id="two" class="h2 euro-medium">О системе информационной безопасности Стахановец</h2>
                     <p class="mt-5 h5 euro-medium">
                         Программный комплекс «Стахановец»
                         разработан как для задач повыявлению и предотвращению утечек информации (DLP), так и для анализа
                         эффективности и вовлеченности сотрудников в рабочие процессы
                     </p>
-                    <div class="row mt-5 mb-5 mb-lg-0">
-                        <div class="col-12 col-lg-6">
+                    <div class="row mt-5 mb-5 mb-xl-0">
+                        <div class="col-12 col-xl-6">
                             <a href="https://stakhanovets.by/wp-content/uploads/2024/08/2024.-Стахановец.-РБ.-DLP-СИСТЕМА-ДЛЯ-ЗАЩИТЫ-ИНФОРМАЦИИ.pdf"
                                class="btn btn-lg btn-primary w-100 rounded-1 text-white fw-bold p-13" target="_blank">
                                 Скачать презентацию
@@ -75,7 +75,7 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-xl-6">
                     <video class="object-fit-cover rounded shadow-sm" controls
                            autoplay
                            playsinline
@@ -187,7 +187,7 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="col">
-									<?php echo "<p class='euro-medium lh-sm text-info m-0 p-4 ps-xl-0 py-lg-0'>{$data[$i]}</p>"; ?>
+									<?php echo "<p class='euro-medium lh-sm text-info text-center text-sm-start m-0 p-4 ps-xl-0 py-lg-0'>{$data[$i]}</p>"; ?>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +237,7 @@ get_header();
     </div>
 
 
-<?php if ( is_user_logged_in() ) : ?>
+<?php //if ( is_user_logged_in() ) : ?>
     <!-- Калькулятор -->
     <div class="stkh-sovmstm my-5 pt-5">
         <div class="container">
@@ -247,21 +247,12 @@ get_header();
                 будут отличаться от расчетных</p>
         </div>
         <div class="container rounded shadow mt-5 py-5">
-            <div class="row">
-                <div class="dlp__calc">
-					<?php
-					set_query_var( 'calc_cta_text', 1 );
-					set_query_var( 'calc_cta_url', 1 );
-					set_query_var( 'calc_cta_isblank', 1 );
-					?>
-                    <h2></h2>
-                    <h3></h3>
-					<?php get_template_part( '/template-parts/template-calc' ) ?>
-                </div>
-            </div>
+
+			<?php get_template_part( '/template-parts/template-calc' ) ?>
+
         </div>
     </div>
-<?php endif; ?>
+<?php //endif; ?>
 
     <!-- Разработчик программного -->
     <div class="stkh-dev my-5 pt-0 pt-lg-5">
@@ -464,7 +455,7 @@ get_header();
                 </div>
 
                 <div class="col-12 col-md-6 col-xxl-4 d-flex align-items-stretch">
-                    <div class="rounded shadow px-4 py-xl-5">
+                    <div class="rounded shadow p-4 py-xl-5">
                         <div class="row">
                             <div class="col-auto">
                                 <img src="<?php echo esc_url( get_theme_file_uri( 'build/images/v6.svg' ) ); ?>"
@@ -665,8 +656,8 @@ get_header();
         </div>
         <div class="container mt-5">
 
-            <div id="stkh-analytics__divs" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mb-3"
-                 id="pills-tab" role="tablist">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mb-3"
+                 id="pills-tab-a" role="tablist">
 
 				<?php
 				$dataA = [
@@ -771,22 +762,9 @@ get_header();
 
     </div>
 
-    <script>
-        // @TODO сделать в мобильной версии подгрузку по индексу клика
-        const stkhA = document.getElementById('stkh-analytics__divs');
+<?php if ( is_user_logged_in() ) : ?>
 
-        for (let i = 0; i < stkhA.children.length; i++) {
-
-            (function (index) {
-                stkhA.children[i].addEventListener("click", myScript);
-
-                function myScript() {
-                    //alert(stkhA.children[i]);
-                    console.log(index);
-                }
-            })(i);
-        }
-    </script>
+<?php endif; ?>
 
     <!-- Предотвращение внутренних угроз -->
     <div class="stkh-predot my-5 pt-5">
@@ -796,7 +774,7 @@ get_header();
         </div>
         <div class="container mt-5">
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mb-3" id="pills-tab2" role="tablist">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mb-3" id="pills-tab-b" role="tablist">
 
 				<?php
 				$dataB = [
@@ -905,7 +883,7 @@ get_header();
         <div class="container mt-5">
             <div class="row">
                 <div class="col-12 col-xl-10 col-xxl-8 offset-xl-1 offset-xxl-2">
-                    <div class="row row-cols-1 row-cols-md-2 row-gap-4 mb-3" id="pills-tab2" role="tablist">
+                    <div class="row row-cols-1 row-cols-md-2 row-gap-4 mb-3" id="pills-tab-c" role="tablist">
 
 						<?php
 						$dataC = [
@@ -990,7 +968,7 @@ get_header();
                 оптимизировать рабочие процессы и увеличить производительность бизнеса.</p>
         </div>
         <div class="container mt-5">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mb-3" id="pills-tab2" role="tablist">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mb-3" id="pills-tab-d" role="tablist">
 
 				<?php
 				$dataD = [
@@ -1080,7 +1058,7 @@ get_header();
 
             <div class="row">
                 <div class="col-12 col-md-6 d-flex align-items-center">
-                    <div class="bg-primary stkh-price__bg p-3 p-lg-4 p-xl-5 rounded">
+                    <div class="bg-primary stkh-price__bg p-3 p-lg-4 p-xl-5 pe-xl-0 rounded">
                         <p class="m-0 text-white h4 px-0 px-xl-5">
                             <span class="ps-xl-4 d-inline-block">Чтобы получить информацию
                             по стоимости и возможностям комплекса «Стахановец», пожалуйста, заполните форму</span>
@@ -1104,7 +1082,7 @@ get_header();
             </div>
         </div>
     </div>
-    <!--ХАК) -->
+    <!--ХАК :) -->
     <style>
         .b24-form-field-agreement {
             display: none !important;

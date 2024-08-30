@@ -55,12 +55,14 @@
   },
   "scripts": {
     "watch": "node-sass assets/scss/ -o ./ --source-map true --output-style compressed --indent-type tab --indent-width 1 -w",
-    "prod": "purgecss --css style.css --content *.php **/*.php --output style.css && imagemin assets/images/* --out-dir=build/images",
+    "prod:css": "purgecss --css style.css --content *.php **/*.php --output style.css",
+    "prod:img": "imagemin assets/images/* --out-dir=build/images",
     "imgmin": "imagemin assets/images/* --out-dir=build/images",
     "compile:css": "node-sass assets/scss/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'assets/scss/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'assets/js/*.js'",
+    "prod:js": "uglifyjs assets/js/mobile.js  -o build/js/mobile.min.js -c -m --source-map \"root='https://stakhanovets.by/wp-content/themes/stakhanovets/build',url='build/js/mobile.min.js.map'\"",
     "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   },
   "dependencies": {
