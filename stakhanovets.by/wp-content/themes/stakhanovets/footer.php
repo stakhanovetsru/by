@@ -112,6 +112,7 @@
 
 <!-- Принятие кукис -->
 <?php get_template_part( 'template-parts/content', 'cookies' ); ?>
+
 <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -123,6 +124,7 @@
 
     });
 </script>
+
 <?php wp_footer(); ?>
 </body>
 </html>

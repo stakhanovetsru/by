@@ -222,9 +222,6 @@ function stakhanovets_es_module() {
 
 
 
-
-
-
     </script>
     <script type="module">
         import * as bootstrap from 'bootstrap'
@@ -244,6 +241,11 @@ function stakhanovets_es_module() {
 }
 
 function dd( $input, $collapse = false ) {
+
+	if ( ! is_user_logged_in() ) {
+		return;
+	}
+
 	$recursive = function ( $data, $level = 0 ) use ( &$recursive, $collapse ) {
 		global $argv;
 
@@ -389,12 +391,13 @@ function stakh_admin_enqueue_scripts( $hook ) {
 
             let el = document.querySelector(window.location.hash);
 
-            if (el !== null) {
+            setTimeout(() => {
+                if (el !== null) {
+                    el.scrollIntoView({behavior: 'smooth'});
+                }
+                //alert(1);
+            }, 1000);
 
-                el.scrollIntoView({behavior: 'smooth'});
-
-            }
-            //alert(1);
         }, false);
 
 
@@ -423,4 +426,14 @@ function example_allowed_block_types( $allowed_block_types, $block_editor_contex
 	);
 
 	return $allowed_block_types;
+}
+
+/**
+ *
+ */
+
+function stkhBtnEdit( $hash, $color = 'btn-outline-light text-white' ) {
+	if ( get_edit_post_link() ) {
+		echo '<a href="' . get_edit_post_link() . $hash . '" data-bs-toggle="tooltip" title="Ссылка для Леоны" class="btn btn-link ' . $color . ' my-3">Изменить</a>';
+	}
 }

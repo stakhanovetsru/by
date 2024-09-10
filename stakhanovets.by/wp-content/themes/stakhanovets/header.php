@@ -18,8 +18,12 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'position-relative' ); ?>>
 <?php wp_body_open(); ?>
+
+<!-- Preloader -->
+<?php get_template_part( 'template-parts/content', 'load' ); ?>
+
 <div id="page" class="site">
     <a class="skip-link screen-reader-text"
        href="#primary"><?php esc_html_e( 'Skip to content', 'stakhanovets' ); ?></a>

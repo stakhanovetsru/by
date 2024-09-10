@@ -217,6 +217,16 @@ body {
 
 .sert-block__bottom ul {
   list-style-image: url("./build/images/uzor.svg");
+  word-break: normal;
+
+  li {
+    margin-bottom: 14px;
+    padding-left: 1em;
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .stkh-system__num {
@@ -567,4 +577,13 @@ SMI END
 .stkh-calc-results > div {
   display: flex;
   flex-direction: column;
+}
+
+
+.z-10 {
+  z-index: 10000;
+}
+
+.stkh-preloader {
+  z-index: -1;
 }

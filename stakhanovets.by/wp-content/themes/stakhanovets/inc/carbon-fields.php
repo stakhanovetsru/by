@@ -12,8 +12,14 @@ function stkh_attach_theme_options() {
 	 * **************************
 	 */
 	Container::make( 'theme_options', 'Общие настройки' )
-	         ->add_fields( array(
-		         Field::make( 'text', 'crb_text', 'Text Field' ),
+	         ->add_tab( __( 'Футер сайта' ), array(
+		         Field::make( 'text', 'crb_first_name', __( 'First Name' ) ),
+		         Field::make( 'text', 'crb_last_name', __( 'Last Name' ) ),
+		         Field::make( 'text', 'crb_position', __( 'Position' ) ),
+	         ) )
+	         ->add_tab( __( 'Разное' ), array(
+		         Field::make( 'text', 'crb_email', __( 'Notification Email' ) ),
+		         Field::make( 'text', 'crb_phone', __( 'Phone Number' ) ),
 	         ) );
 
 	/*
@@ -26,11 +32,11 @@ function stkh_attach_theme_options() {
 	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
 	         ->add_fields( array(
 		         Field::make( 'text', 'promo_title', 'Заголовок' ),
-		         Field::make( 'text', 'promo_title2', 'Подзаголовок' ),
+		         Field::make( 'text', 'promo_desc', 'Подзаголовок' ),
 		         Field::make( 'html', 'promo_information_text' )
 		              ->set_html( '<h2 id="promo-blocks">Блоки 4 шт.</h2>' ),
 		         Field::make( 'complex', 'stakh_promo_blocks' )
-		              ->add_fields( 'reviews', array(
+		              ->add_fields( array(
 			              Field::make( 'image', 'icon', 'Иконка' )
 			                   ->set_value_type( 'url' ),
 			              Field::make( 'textarea', 'text', 'Текст' ),
@@ -67,6 +73,195 @@ function stkh_attach_theme_options() {
 
 		     <?php
 	     } );
+
+	/*
+     * *************************
+     * Front Page Sertif-t block
+     * *************************
+     */
+	Container::make( 'post_meta', 'Сертификат блок' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'sert_title', 'Заголовок' ),
+		         Field::make( 'textarea', 'sert_desc', 'Подзаголовок' ),
+		         Field::make( 'rich_text', 'sert_richtext', 'Текст' ),
+		         Field::make( 'image', 'sert_image', 'Изображение сертификата' )
+		              ->set_value_type( 'url' )
+	         ) );
+
+	/*
+     * ******************************
+     * Front Page System About block
+     * ******************************
+     */
+	Container::make( 'post_meta', 'О системе блок' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'sys_title', 'Заголовок' ),
+		         Field::make( 'rich_text', 'sys_desc', 'Текст' ),
+		         Field::make( 'text', 'sys_link', 'Ссылка на презу' )
+		              ->set_required(),
+		         Field::make( 'text', 'sys_video', 'Ссылка на видеоролик .mp4' )
+		              ->set_required(),
+		         Field::make( 'html', 'sys_info_text' )
+		              ->set_html( '<h2>Блоки 4 шт.</h2>' ),
+		         Field::make( 'complex', 'sys_bloks' )
+		              ->add_fields( array(
+			              Field::make( 'text', 'num', 'Цифра' )
+			                   ->set_width( 25 ),
+			              Field::make( 'text', 'text', 'Текст' )
+			                   ->set_width( 75 ),
+		              ) )
+	         ) );
+
+	/*
+     * ********************
+     * Front Page блок Фич
+     * ********************
+     */
+	Container::make( 'post_meta', 'Фичи системы' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'ficha_title', 'Заголовок' ),
+		         Field::make( 'complex', 'ficha_data' )
+		              ->add_fields( array(
+			              Field::make( 'text', 'text', 'Текст' )
+			                   ->set_width( 100 ),
+		              ) )
+	         ) );
+
+
+	/*
+	 * ***********************************************
+	 * Front Page Как работает DLP система Стахановец
+	 * ***********************************************
+	 */
+	Container::make( 'post_meta', 'Как работает DLP система Стахановец' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'how_title', 'Заголовок' ),
+		         Field::make( 'image', 'how_img', 'Картинка' )
+		              ->set_value_type( 'url' ),
+	         ) );
+
+
+	/*
+	 * ***************************************************
+	 * Front Page Совместимость с программными продуктами
+	 * ***************************************************
+	 */
+	Container::make( 'post_meta', 'Совместимость с программными продуктами' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'sovm_title', 'Заголовок' ),
+		         Field::make( 'image', 'sovm_img', 'Картинка' )
+		              ->set_value_type( 'url' ),
+	         ) );
+
+	/*
+	 * ***********************
+	 * Front Page Калькулятор
+	 * ***********************
+	 */
+	Container::make( 'post_meta', 'Калькулятор' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'calc_title', 'Заголовок' ),
+		         Field::make( 'text', 'calc_decrp', 'Описание' ),
+	         ) );
+
+	/*
+     * *************************
+     * Front Page Разработчик ПО
+     * *************************
+     */
+	Container::make( 'post_meta', 'Разработчик ПО' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'rzrb_title', 'Заголовок' ),
+		         Field::make( 'rich_text', 'rzrb_desc', 'Описание' ),
+		         Field::make( 'complex', 'rzrb_blocks' )
+		              ->add_fields( array(
+			              Field::make( 'text', 'num', 'Цифра' )
+			                   ->set_width( 25 ),
+			              Field::make( 'text', 'text', 'Текст' )
+			                   ->set_width( 75 ),
+		              ) ),
+		         Field::make( 'complex', 'rzrb_logo' )
+		              ->add_fields( array(
+			              Field::make( 'image', 'how_img', 'Картинка' )
+			                   ->set_value_type( 'url' ),
+		              ) ),
+	         ) );
+
+
+	/*
+	* ***********************************
+	* Front Page Возможности DLP-системы
+	* ***********************************
+	*/
+	Container::make( 'post_meta', 'Возможности  системы' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'vzm_title', 'Заголовок' ),
+		         Field::make( 'complex', 'vzm_blocks' )
+		              ->add_fields( array(
+			              Field::make( 'image', 'img', 'Иконка' )
+			                   ->set_width( 25 )
+			                   ->set_value_type( 'url' ),
+			              Field::make( 'text', 'num', 'Заголовок' )
+			                   ->set_width( 25 ),
+			              Field::make( 'rich_text', 'text', 'Текст' )
+			                   ->set_width( 50 ),
+		              ) )
+	         ) );
+
+	/*
+	* ***********************************
+	* Front Page Связаться с менеджером
+	* ***********************************
+	*/
+	Container::make( 'post_meta', 'Связаться с менеджером' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'text', 'price_title', 'Заголовок' ),
+		         Field::make( 'text', 'price_desc', 'Описание' ),
+		         Field::make( 'textarea', 'price_form', 'Код формы Б24' ),
+	         ) );
+
+
+	/*
+	* ********************************************************
+	* Front Page Официальный дистрибьютор / Доверенный партнёр
+	* ********************************************************
+	*/
+	Container::make( 'post_meta', 'Официальный дистрибьютор или Доверенный партнёр' )
+	         ->where( 'post_type', '=', 'page' )
+	         ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+	         ->add_fields( array(
+		         Field::make( 'complex', 'crb_contacts_uz', 'Данные партнеров' )
+		              ->add_fields( array(
+			              Field::make( 'radio', 'radio', 'Выбор типа партнера' )
+			                   ->set_options( array(
+				                   'd' => 'Доверенный партнёр',
+				                   'o' => 'Официальный дистрибьютор',
+			                   ) ),
+			              Field::make( 'text', 'co_name', 'Название компании' ),
+			              Field::make( 'text', 'co_mail', 'E-mail' ),
+			              Field::make( 'text', 'co_tel', 'Телефон' ),
+			              Field::make( 'image', 'co_photo', 'Логотип партнера' ),
+			              Field::make( 'text', 'co_link', 'Ссылка на партнера' )->set_attribute( 'type', 'url' ),
+		              ) )
+	         ) );
 }
 
 
