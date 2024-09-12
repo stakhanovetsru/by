@@ -13,13 +13,18 @@ function stkh_attach_theme_options() {
 	 */
 	Container::make( 'theme_options', 'Общие настройки' )
 	         ->add_tab( __( 'Футер сайта' ), array(
-		         Field::make( 'text', 'crb_first_name', __( 'First Name' ) ),
-		         Field::make( 'text', 'crb_last_name', __( 'Last Name' ) ),
-		         Field::make( 'text', 'crb_position', __( 'Position' ) ),
+		         Field::make( 'rich_text', 'footer_text', 'Текст в футере' ),
+		         Field::make( 'rich_text', 'footer_block1', '1/3 Реквизиты' )->set_width( 33 ),
+		         Field::make( 'rich_text', 'footer_block2', '2/3 Официальный дистрибьютор' )->set_width( 33 ),
+		         Field::make( 'rich_text', 'footer_block3', '3/3 Доверенный партнёр' )->set_width( 33 ),
+		         Field::make( 'text', 'footer_p', 'Ссылка на презентацию' )->set_width( 100 ),
+		         Field::make( 'text', 'footer_k', 'Ссылка на Политику конфиденциальности' )->set_width( 100 ),
+		         Field::make( 'text', 'footer_l', 'Ссылка на Лицензионное соглашение' )->set_width( 100 ),
+		         Field::make( 'text', 'footer_copy', 'Copyright ' )->set_width( 100 ),
 	         ) )
 	         ->add_tab( __( 'Разное' ), array(
-		         Field::make( 'text', 'crb_email', __( 'Notification Email' ) ),
-		         Field::make( 'text', 'crb_phone', __( 'Phone Number' ) ),
+		         Field::make( 'header_scripts', 'crb_header_scripts', __( 'Header Scripts' ) ),
+		         Field::make( 'footer_scripts', 'crb_footer_scripts', __( 'Footer Scripts' ) )
 	         ) );
 
 	/*
