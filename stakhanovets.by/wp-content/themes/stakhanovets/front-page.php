@@ -91,7 +91,7 @@ $calc_decrp = carbon_get_post_meta( get_the_ID(), 'calc_decrp' );
 <?php get_template_part( 'template-parts/content', 'partner' ); ?>
 
     <!-- Отзывы и публикации -->
-<?php get_template_part( 'template-parts/template', 'reviews' ); ?>
+<?php //get_template_part( 'template-parts/template', 'reviews' ); ?>
 
     <!-- СМИ о нас -->
 <?php get_template_part( 'template-parts/template', 'smi' ); ?>
