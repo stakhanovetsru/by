@@ -20,7 +20,7 @@ if ( ! $price_form ) {
             <div class="col-12 col-md-6 d-flex align-items-center">
                 <div class="bg-primary stkh-price__bg p-3 p-lg-4 p-xl-5 pe-xl-0 rounded">
                     <p class="m-0 text-white h4 px-0 px-xl-5">
-                        <span class="ps-xl-4 d-inline-block"><?php echo wp_kses( $price_desc, 'post' ); ?>у</span>
+                        <span class="ps-xl-4 d-inline-block"><?php echo wp_kses( $price_desc, 'post' ); ?></span>
                     </p>
                 </div>
             </div>

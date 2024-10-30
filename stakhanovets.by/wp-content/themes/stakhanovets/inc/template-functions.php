@@ -222,6 +222,7 @@ function stakhanovets_es_module() {
 
 
 
+
     </script>
     <script type="module">
         import * as bootstrap from 'bootstrap'
@@ -437,3 +438,55 @@ function stkhBtnEdit( $hash, $color = 'btn-outline-light text-white' ) {
 		echo '<a href="' . get_edit_post_link() . $hash . '" data-bs-toggle="tooltip" title="Ссылка для Леоны" class="btn btn-link ' . $color . ' my-3">Изменить</a>';
 	}
 }
+
+
+/**
+ * Remove Help Tabs
+ *
+ * @link https://developer.wordpress.org/reference/classes/wp_screen/remove_help_tabs/
+ * @link https://developer.wordpress.org/reference/classes/wp_screen/remove_help_tab/
+ */
+add_action(
+	'admin_head',
+	function () {
+		$screen = get_current_screen();
+
+		// Remove all tabs
+		$screen->remove_help_tabs();
+
+		// Remove specific
+		//$screen->remove_help_tab( 'id-of-tab-you-want-to-remove' );
+	}
+);
+
+
+/**
+ * Удаляет логотип WordPress в админ-баре панели управления сайтом.
+ */
+
+add_action( 'wp_before_admin_bar_render', function () {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu( 'wp-logo' );
+} );
+
+
+/**
+ * Удаляет|Изменяет фразы из Футера панели администратора WordPress.
+ */
+
+add_filter( 'admin_footer_text', function ( $text ) {
+
+	$text = '&copy;' . get_bloginfo( 'name' ) . ', ' . wp_date( 'Y' );
+
+	return $text;
+} );
+
+// Если нужно просто удалить, то вернём пустую строку
+add_filter( 'admin_footer_text', '__return_empty_string' );
+
+
+/**
+ * Удаляет версию WordPress из Футера панели администратора.
+ */
+
+add_filter( 'update_footer', '__return_empty_string', 15 );
